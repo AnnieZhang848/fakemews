@@ -1,0 +1,21 @@
+Format file for fallacy propmts. All sections must be seperated with "////" and all subsections with "????"
+Refer to Example 1 for help. 
+
+
+
+Title
+////
+Body
+////
+Options
+	Option 1 
+	????
+	Option 2
+	????
+	Option 3
+////
+Type of Fallacy
+////
+Example of said Fallacy (Option 1, 2 or 3)
+////
+Explanation of fallacy

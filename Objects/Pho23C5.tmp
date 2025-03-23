@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://gs3w0ha63pxi"]
+
+[ext_resource type="PackedScene" uid="uid://cesx5vd6n06vu" path="res://Objects/Post.tscn" id="1_chvso"]
+[ext_resource type="Script" path="res://Scripts/phone.gd" id="1_wxs1r"]
+
+[node name="PhoneScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wxs1r")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.246
+anchor_right = 0.704
+anchor_bottom = 1.0
+offset_left = -0.391998
+offset_right = -0.00805664
+color = Color(0.556863, 0.552941, 0.541176, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.061
+anchor_right = 0.936
+anchor_bottom = 1.002
+offset_left = -0.208004
+offset_right = -0.208038
+offset_bottom = -0.328064
+metadata/_edit_use_anchors_ = true
+
+[node name="Container" type="VBoxContainer" parent="ColorRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Post" parent="ColorRect/ScrollContainer/Container" instance=ExtResource("1_chvso")]
+layout_mode = 2
