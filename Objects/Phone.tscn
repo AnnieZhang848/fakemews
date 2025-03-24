@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://gs3w0ha63pxi"]
+[gd_scene load_steps=3 format=3 uid="uid://gs3w0ha63pxi"]
 
 [ext_resource type="Script" path="res://Scripts/phone.gd" id="1_wxs1r"]
+[ext_resource type="Texture2D" uid="uid://b8ltt0l35cdkl" path="res://Assets/Phone.png" id="2_ai4nl"]
 
 [node name="Phone" type="Control"]
 layout_mode = 3
@@ -13,13 +14,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wxs1r")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="PhoneSprite" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.00294444
-anchor_right = 1.00001
+anchor_left = 0.0283019
+anchor_right = 1.0283
 anchor_bottom = 1.0
-offset_left = -0.391998
-offset_right = -0.00805664
-color = Color(0.556863, 0.552941, 0.541176, 1)
+offset_left = 3.05176e-05
+offset_bottom = 315.636
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ai4nl")
+expand_mode = 5
 metadata/_edit_use_anchors_ = true

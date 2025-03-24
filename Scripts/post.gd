@@ -1,8 +1,7 @@
 extends Control
 
-@onready var title = $ColorRect/Title
-@onready var body = $ColorRect/Body
-
+@onready var title = $Title
+@onready var body = $Body
 
 
 func setup_post(Title : String, Body : String):
