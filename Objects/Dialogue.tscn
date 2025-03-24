@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://7gmadh45wgn8"]
+[gd_scene load_steps=5 format=3 uid="uid://7gmadh45wgn8"]
 
-[ext_resource type="Texture2D" uid="uid://dq64wfbte6g" path="res://Assets/idk.jpg" id="1_ojfld"]
 [ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="2_q48wf"]
+[ext_resource type="PackedScene" uid="uid://dppxv3oxyp3ym" path="res://Objects/Characters/male1.tscn" id="2_tymhg"]
+[ext_resource type="PackedScene" uid="uid://denrn8ik01ksf" path="res://Objects/Characters/female1.tscn" id="2_uxqa6"]
+[ext_resource type="PackedScene" uid="uid://bpsn0kioxu2fh" path="res://Objects/Characters/female2.tscn" id="3_m02ig"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -21,10 +23,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Character 1" type="Sprite2D" parent="Characters"]
-position = Vector2(564, 324)
-scale = Vector2(1.87735, 1.875)
-texture = ExtResource("1_ojfld")
+[node name="Male1" parent="Characters" instance=ExtResource("2_tymhg")]
+position = Vector2(152, -9)
+scale = Vector2(0.8, 0.8)
+
+[node name="Female1" parent="Characters" instance=ExtResource("2_uxqa6")]
+visible = false
+position = Vector2(139, 8)
+scale = Vector2(0.8, 0.8)
+
+[node name="Female2" parent="Characters" instance=ExtResource("3_m02ig")]
+visible = false
+position = Vector2(162, -1)
+scale = Vector2(0.8, 0.8)
 
 [node name="TextBox" type="ColorRect" parent="."]
 layout_mode = 1

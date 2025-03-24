@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpsn0kioxu2fh"]
+
+[ext_resource type="Texture2D" uid="uid://b4weauklxy580" path="res://Assets/Character Sprites/fm02/fm02-body.png" id="1_gm5t3"]
+[ext_resource type="SpriteFrames" uid="uid://dybemui7r4hya" path="res://Objects/Characters/faces.tres" id="2_2oq87"]
+
+[node name="Female2" type="Node2D"]
+
+[node name="Body" type="Sprite2D" parent="."]
+position = Vector2(533, 369)
+scale = Vector2(0.341667, 0.341667)
+texture = ExtResource("1_gm5t3")
+
+[node name="Eyes" type="AnimatedSprite2D" parent="Body"]
+position = Vector2(-2.86102e-06, 35.1219)
+scale = Vector2(1, 0.99458)
+sprite_frames = ExtResource("2_2oq87")
+animation = &"f2_eyes"
+frame = 3
+
+[node name="Mouths" type="AnimatedSprite2D" parent="Body"]
+position = Vector2(-5.72205e-06, 5.85369)
+sprite_frames = ExtResource("2_2oq87")
+animation = &"f2_mouths"
+frame = 3
