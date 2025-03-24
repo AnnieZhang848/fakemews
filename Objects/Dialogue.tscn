@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://7gmadh45wgn8"]
+
+[ext_resource type="Texture2D" uid="uid://dq64wfbte6g" path="res://Assets/idk.jpg" id="1_ojfld"]
+[ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="2_q48wf"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Characters" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Character 1" type="Sprite2D" parent="Characters"]
+position = Vector2(564, 324)
+scale = Vector2(1.87735, 1.875)
+texture = ExtResource("1_ojfld")
+
+[node name="TextBox" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.719136
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.588235, 0.729412, 1, 1)
+
+[node name="Dialogue" type="RichTextLabel" parent="TextBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0138889
+anchor_top = 0.131868
+anchor_right = 0.977431
+anchor_bottom = 0.714286
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_q48wf")
+text = "This is where dialogue will go. We can have dialogue text files for each scene and feed them into an array based on paragraph breaks. Then the \"next\" button (and spacebar/enter key?) will just replace the dialogue text with the next paragraph."
+
+[node name="Button" type="Button" parent="TextBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.916667
+anchor_top = 0.802198
+anchor_right = 0.982639
+anchor_bottom = 0.934066
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Next"

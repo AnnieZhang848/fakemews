@@ -1,103 +1,79 @@
 [gd_scene load_steps=2 format=3 uid="uid://bu4xhnwvh5jpu"]
 
-[ext_resource type="LabelSettings" uid="uid://dfs6kmy7fng4l" path="res://Assets/Default.tres" id="1_f5ymr"]
+[ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="1_b541w"]
 
-[node name="Control" type="Control"]
+[node name="Selection" type="Control"]
 layout_mode = 3
-anchor_top = 0.597
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 0.144012
-offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.008
-offset_bottom = -0.071991
-
 [node name="Selection" type="Control" parent="."]
 layout_mode = 1
-anchor_right = 0.419
-anchor_bottom = 1.0
-offset_right = 0.311951
+anchor_left = 0.259
+anchor_top = 0.160494
+anchor_right = 0.678
+anchor_bottom = 0.814852
+offset_left = -0.368011
+offset_right = -0.0560913
+offset_bottom = 23.976
+metadata/_edit_use_anchors_ = true
 
 [node name="Up" type="Button" parent="Selection"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.414451
-anchor_top = 0.097
-anchor_right = 0.522
-anchor_bottom = 0.216
-offset_left = -0.180008
-offset_top = -0.123001
-offset_right = -0.126007
-offset_bottom = 0.0559998
+anchor_left = 0.44105
+anchor_right = 0.532035
+anchor_bottom = 0.102482
+offset_left = -0.0270081
+offset_right = 0.0269775
+offset_bottom = 0.0879974
+grow_horizontal = 2
+theme = ExtResource("1_b541w")
 text = "Up"
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionText" type="Label" parent="Selection"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.237723
+anchor_right = 1.0
+anchor_bottom = 0.78683
+offset_top = -0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_b541w")
+text = "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+clip_text = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Down" type="Button" parent="Selection"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.398
-anchor_top = 0.733471
-anchor_right = 0.5
-anchor_bottom = 0.853
-offset_left = -0.234009
-offset_top = 0.0309906
-offset_right = 3.5
-offset_bottom = 0.0729828
+anchor_left = 0.445
+anchor_top = 0.888589
+anchor_right = 0.555
+anchor_bottom = 1.0
+offset_left = 0.0649872
+offset_top = -0.0880127
+offset_right = -0.0650024
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_b541w")
 text = "Down"
 metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Selection"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.135
-anchor_top = 0.24683
-anchor_right = 0.901
-anchor_bottom = 0.745
-offset_left = -0.205002
-offset_top = 0.0709953
-offset_right = -0.183014
-offset_bottom = 0.0449829
-text = "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"
-label_settings = ExtResource("1_f5ymr")
-horizontal_alignment = 1
-autowrap_mode = 1
-clip_text = true
-metadata/_edit_use_anchors_ = true
-
-[node name="FallacyOptions" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.405
-anchor_top = 0.216
-anchor_right = 0.76
-anchor_bottom = 0.849
-offset_left = 0.439972
-offset_top = 0.0559998
-offset_right = 0.479919
-offset_bottom = 0.108994
-grow_horizontal = 2
-
-[node name="Option 1" type="Button" parent="FallacyOptions"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-text = "Option 1"
-
-[node name="Option 2" type="Button" parent="FallacyOptions"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-text = "Option 2
-"
-
-[node name="Option 3" type="Button" parent="FallacyOptions"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-text = "Option 3
-"

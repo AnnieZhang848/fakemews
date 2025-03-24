@@ -1,3 +1,51 @@
-[gd_scene format=3 uid="uid://7gmadh45wgn8"]
+[gd_scene load_steps=5 format=3 uid="uid://1tehy8n4fosh"]
 
-[node name="Main" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://7gmadh45wgn8" path="res://Objects/Dialogue.tscn" id="1_bc467"]
+[ext_resource type="PackedScene" uid="uid://gs3w0ha63pxi" path="res://Objects/Phone.tscn" id="2_5uybq"]
+[ext_resource type="PackedScene" uid="uid://bu4xhnwvh5jpu" path="res://Objects/Selection.tscn" id="4_milnb"]
+[ext_resource type="PackedScene" uid="uid://dcod07ms58a3w" path="res://Objects/Fallacies.tscn" id="4_ngvpg"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Game" parent="." instance=ExtResource("1_bc467")]
+layout_mode = 1
+
+[node name="Phone" parent="." instance=ExtResource("2_5uybq")]
+visible = false
+layout_mode = 1
+
+[node name="Selection" parent="." instance=ExtResource("4_milnb")]
+visible = false
+layout_mode = 1
+
+[node name="Fallacies" parent="." instance=ExtResource("4_ngvpg")]
+visible = false
+layout_mode = 1
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.950521
+anchor_right = 1.0
+anchor_bottom = 0.0601852
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+text = "Menu"
