@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cesx5vd6n06vu"]
 
-[ext_resource type="Script" path="res://Scripts/post.gd" id="1_h6scf"]
-[ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="2_4undu"]
-[ext_resource type="Texture2D" uid="uid://dq64wfbte6g" path="res://Assets/idk.jpg" id="2_w37a0"]
+[ext_resource type="Script" path="res://Scripts/post.gd" id="1_66xkk"]
+[ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="2_ggq8i"]
+[ext_resource type="Texture2D" uid="uid://dq64wfbte6g" path="res://Assets/idk.jpg" id="3_qmxko"]
 
 [node name="Post" type="Control"]
 custom_minimum_size = Vector2(460, 650)
@@ -15,7 +15,7 @@ offset_right = -0.240112
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_h6scf")
+script = ExtResource("1_66xkk")
 metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="."]
@@ -29,7 +29,7 @@ offset_left = 11.9404
 offset_top = 91.1
 offset_right = 12.1704
 offset_bottom = 90.95
-theme = ExtResource("2_4undu")
+theme = ExtResource("2_ggq8i")
 text = "This is a title or somthing idk"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -45,7 +45,7 @@ offset_left = 24.2204
 offset_top = 88.5
 offset_right = -9.35962
 offset_bottom = 88.6
-theme = ExtResource("2_4undu")
+theme = ExtResource("2_ggq8i")
 text = "This is the body of a post. IDK what else to say /////////////////////////////
 ///////////////////////////////////
 ////////////////////////////////
@@ -63,5 +63,5 @@ offset_left = 52.527
 offset_top = 88.2
 offset_right = 52.7158
 offset_bottom = 87.972
-texture = ExtResource("2_w37a0")
+texture = ExtResource("3_qmxko")
 expand_mode = 3

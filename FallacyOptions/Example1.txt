@@ -1,8 +1,6 @@
 Something Somthing Title
 ////
-Person A: We should have stricter environmental regulations to protect our planet. 
-Person B: "Person A wants to shut down all industries and put everyone out of work. 
-How can we afford to live in a world with no jobs?
+res://Assets/idk.jpg
 ////
 	We should have stricter environmental regulations to protect our planet.
 	????

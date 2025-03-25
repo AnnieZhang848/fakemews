@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bu4xhnwvh5jpu"]
+[gd_scene load_steps=3 format=3 uid="uid://bu4xhnwvh5jpu"]
 
 [ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="1_b541w"]
+[ext_resource type="Script" path="res://Objects/Selection.gd" id="1_egd2h"]
 
 [node name="Selection" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_egd2h")
 metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="ColorRect" parent="."]
@@ -19,12 +21,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Confirm" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.88
+anchor_top = 0.897
+anchor_right = 0.973
+anchor_bottom = 0.968
+offset_left = 0.239929
+offset_top = -0.255981
+offset_right = 0.104004
+offset_bottom = -0.264038
+theme = ExtResource("1_b541w")
+text = "Confirm"
+
 [node name="Selection" type="Control" parent="."]
 layout_mode = 1
-anchor_left = 0.259
-anchor_top = 0.160494
-anchor_right = 0.678
-anchor_bottom = 0.814852
+anchor_left = 0.133132
+anchor_top = 0.0632716
+anchor_right = 0.552132
+anchor_bottom = 0.71763
 offset_left = -0.368011
 offset_right = -0.0560913
 offset_bottom = 23.976
@@ -34,8 +50,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.44105
+anchor_top = 0.162946
 anchor_right = 0.532035
-anchor_bottom = 0.102482
+anchor_bottom = 0.265428
 offset_left = -0.0270081
 offset_right = 0.0269775
 offset_bottom = 0.0879974
@@ -47,9 +64,9 @@ metadata/_edit_use_anchors_ = true
 [node name="OptionText" type="Label" parent="Selection"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.237723
+anchor_top = 0.31808
 anchor_right = 1.0
-anchor_bottom = 0.78683
+anchor_bottom = 0.867187
 offset_top = -0.5
 offset_bottom = 0.5
 grow_horizontal = 2
@@ -65,10 +82,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Down" type="Button" parent="Selection"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.445
-anchor_top = 0.888589
-anchor_right = 0.555
-anchor_bottom = 1.0
+anchor_left = 0.426367
+anchor_top = 0.904214
+anchor_right = 0.536367
+anchor_bottom = 1.01563
 offset_left = 0.0649872
 offset_top = -0.0880127
 offset_right = -0.0650024
@@ -77,3 +94,25 @@ grow_vertical = 0
 theme = ExtResource("1_b541w")
 text = "Down"
 metadata/_edit_use_anchors_ = true
+
+[node name="FallacyList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.651
+anchor_top = 0.168
+anchor_right = 0.888
+anchor_bottom = 0.836
+offset_left = 0.0479736
+offset_top = 0.135994
+offset_right = 0.0239258
+offset_bottom = 0.271973
+theme = ExtResource("1_b541w")
+item_count = 3
+item_0/text = "Fallacy1"
+item_1/text = "Fallacy2"
+item_2/text = "Fallacy 3"
+
+[connection signal="button_up" from="Confirm" to="." method="_on_confirm_button_up"]
+[connection signal="button_up" from="Selection/Up" to="." method="_on_up_button_up"]
+[connection signal="button_up" from="Selection/Down" to="." method="_on_down_button_up"]
+[connection signal="item_clicked" from="FallacyList" to="." method="_on_fallacy_list_item_clicked"]
