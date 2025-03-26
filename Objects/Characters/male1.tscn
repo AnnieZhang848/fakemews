@@ -15,7 +15,7 @@ position = Vector2(0, 20.4878)
 scale = Vector2(1, 0.99458)
 sprite_frames = ExtResource("2_2jbhi")
 animation = &"m1_eyes"
-frame = 4
+frame = 3
 
 [node name="Mouths" type="AnimatedSprite2D" parent="Body"]
 position = Vector2(0, -5.85364)

@@ -17,10 +17,10 @@ position = Vector2(8.78048, 17.561)
 scale = Vector2(1, 0.99458)
 sprite_frames = ExtResource("2_pvt1g")
 animation = &"f1_eyes"
-frame = 1
+frame = 4
 
 [node name="Mouths" type="AnimatedSprite2D" parent="Body"]
 position = Vector2(2.92682, 2.92686)
 sprite_frames = ExtResource("2_pvt1g")
 animation = &"f1_mouths"
-frame = 2
+frame = 8

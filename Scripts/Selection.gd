@@ -4,9 +4,8 @@ var FallacySelected
 var TextSelected
 @onready var FallacyList = $FallacyList
 @onready var TextSelection = $Selection/OptionText
+
 var PossibleText = [""]
-
-
 var index = 0
 
 # Called when the node enters the scene tree for the first time.

@@ -58,6 +58,7 @@ item_9/text = "Fallacy 10"
 metadata/_edit_use_anchors_ = true
 
 [node name="Submit" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.8825

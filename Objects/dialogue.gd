@@ -13,6 +13,14 @@ var textFiles = ["res://Dialogue/Scene1.txt","res://Dialogue/Scene2.txt"]
 var cur_scene = 0
 var scene_text : Array
 var cur_text = 0
+var textBoxes = {
+	"Teacher" : load("res://Assets/f1_dialogue.png"),
+	"Friend1" : load("res://Assets/m1_dialogue.png"),
+	"Ava" : load("res://Assets/f2_dialogue.png"),
+	"Player" : load("res://Assets/p_dialogue.png")
+}
+
+signal scene_ended(scene_num)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,17 +43,26 @@ func init():
 	name_tag = $TextBox/Name
 	dialogue = $TextBox/Dialogue
 	
-	teacher = $Characters/Female1
+	teacher = $Characters/Teacher
 	friend1 = $Characters/Male1
-	friend2 = $Characters/Female2
+	friend2 = $Characters/Ava
 	
 	characters["Teacher"] = teacher
 	characters["Friend1"] = friend1
-	characters["Friend2"] = friend2
+	characters["Ava"] = friend2
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("Next_Text"):
+		if cur_text < len(scene_text)-1:
+			cur_text += 1
+			set_text(scene_text[cur_text])
+		else:
+			scene_ended.emit(cur_scene)
+			cur_scene += 1
+			if cur_scene < len(textFiles):
+				cur_text = 0
+				load_from_file(cur_scene)
 
 func set_speaker(n):
 	if speaker != null:
@@ -53,15 +70,16 @@ func set_speaker(n):
 	speaker = characters[n]
 	speaker.show()
 	name_tag.text = n
+	$TextBox.texture = textBoxes[n]
 
 func set_text(s):
 	var text = s.split(" : ")
 	if text[0] == "P":
-		name_tag.hide()
-		# Change other stuff visually to indicate player thoughts
+		speaker.close_mouth()
+		$TextBox.texture = textBoxes["Player"]
 	else:
-		#name_tag.show()
 		speaker.set_face(text[0])
+		$TextBox.texture = textBoxes[characters.find_key(speaker)]
 	dialogue.text = text[1]
 
 func _on_next_button_pressed() -> void:
@@ -69,8 +87,8 @@ func _on_next_button_pressed() -> void:
 		cur_text += 1
 		set_text(scene_text[cur_text])
 	else:
+		scene_ended.emit(cur_scene)
 		cur_scene += 1
 		if cur_scene < len(textFiles):
 			cur_text = 0
 			load_from_file(cur_scene)
-			#set_speaker(speakers[cur_scene])

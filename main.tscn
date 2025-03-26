@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://1tehy8n4fosh"]
+[gd_scene load_steps=6 format=3 uid="uid://1tehy8n4fosh"]
 
 [ext_resource type="PackedScene" uid="uid://7gmadh45wgn8" path="res://Objects/Dialogue.tscn" id="1_bc467"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_htgat"]
 [ext_resource type="PackedScene" uid="uid://gs3w0ha63pxi" path="res://Objects/Phone.tscn" id="2_5uybq"]
 [ext_resource type="PackedScene" uid="uid://bu4xhnwvh5jpu" path="res://Objects/Selection.tscn" id="4_milnb"]
 [ext_resource type="PackedScene" uid="uid://dcod07ms58a3w" path="res://Objects/Fallacies.tscn" id="4_ngvpg"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_htgat")
 metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="ColorRect" parent="."]
@@ -24,22 +26,26 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Game" parent="." instance=ExtResource("1_bc467")]
+[node name="Game" type="Control" parent="."]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Phone" parent="." instance=ExtResource("2_5uybq")]
+[node name="Dialogue" parent="Game" instance=ExtResource("1_bc467")]
 visible = false
 layout_mode = 1
 
-[node name="Selection" parent="." instance=ExtResource("4_milnb")]
+[node name="Phone" parent="Game" instance=ExtResource("2_5uybq")]
+layout_mode = 1
+
+[node name="Selection" parent="Game" instance=ExtResource("4_milnb")]
 visible = false
 layout_mode = 1
 
-[node name="Fallacies" parent="." instance=ExtResource("4_ngvpg")]
-visible = false
-layout_mode = 1
-
-[node name="Menu" type="Button" parent="."]
+[node name="OpenNotes" type="Button" parent="Game"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.950521
@@ -48,4 +54,23 @@ anchor_bottom = 0.0601852
 offset_left = -8.0
 offset_bottom = 8.0
 grow_horizontal = 0
-text = "Menu"
+text = "Notes"
+
+[node name="Fallacies" parent="." instance=ExtResource("4_ngvpg")]
+visible = false
+layout_mode = 1
+
+[node name="CloseNotes" type="Button" parent="Fallacies"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.950521
+anchor_right = 1.0
+anchor_bottom = 0.0601852
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+text = "Close"
+
+[connection signal="scene_ended" from="Game/Dialogue" to="." method="_on_game_scene_ended"]
+[connection signal="pressed" from="Game/OpenNotes" to="." method="_on_open_notes_pressed"]
+[connection signal="pressed" from="Fallacies/CloseNotes" to="." method="_on_close_notes_pressed"]
