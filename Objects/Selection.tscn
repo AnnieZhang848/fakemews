@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bu4xhnwvh5jpu"]
+[gd_scene load_steps=5 format=3 uid="uid://bu4xhnwvh5jpu"]
 
 [ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="1_b541w"]
-[ext_resource type="Script" path="res://Objects/Selection.gd" id="1_egd2h"]
+[ext_resource type="Script" path="res://Scripts/Selection.gd" id="1_egd2h"]
+[ext_resource type="Texture2D" uid="uid://jenbhmcuvs0r" path="res://Assets/ArrowButton.png" id="3_conoa"]
+[ext_resource type="Texture2D" uid="uid://cjbhn38sj83ty" path="res://Assets/ConfirmButton.png" id="3_fr5jg"]
 
 [node name="Selection" type="Control"]
 layout_mode = 3
@@ -24,16 +26,17 @@ grow_vertical = 2
 [node name="Confirm" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.88
+anchor_left = 0.93
 anchor_top = 0.897
 anchor_right = 0.973
 anchor_bottom = 0.968
-offset_left = 0.239929
+offset_left = -0.360107
 offset_top = -0.255981
 offset_right = 0.104004
-offset_bottom = -0.264038
+offset_bottom = 3.73602
+mouse_default_cursor_shape = 2
 theme = ExtResource("1_b541w")
-text = "Confirm"
+icon = ExtResource("3_fr5jg")
 
 [node name="Selection" type="Control" parent="."]
 layout_mode = 1
@@ -49,16 +52,19 @@ metadata/_edit_use_anchors_ = true
 [node name="Up" type="Button" parent="Selection"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.44105
+anchor_left = 0.434839
 anchor_top = 0.162946
-anchor_right = 0.532035
-anchor_bottom = 0.265428
+anchor_right = 0.538246
+anchor_bottom = 0.274357
 offset_left = -0.0270081
 offset_right = 0.0269775
 offset_bottom = 0.0879974
 grow_horizontal = 2
+rotation = -1.5708
+pivot_offset = Vector2(26, 26.0002)
+mouse_default_cursor_shape = 2
 theme = ExtResource("1_b541w")
-text = "Up"
+icon = ExtResource("3_conoa")
 metadata/_edit_use_anchors_ = true
 
 [node name="OptionText" type="Label" parent="Selection"]
@@ -91,8 +97,11 @@ offset_top = -0.0880127
 offset_right = -0.0650024
 grow_horizontal = 2
 grow_vertical = 0
+rotation = 1.5708
+pivot_offset = Vector2(25.9997, 26.9999)
+mouse_default_cursor_shape = 2
 theme = ExtResource("1_b541w")
-text = "Down"
+icon = ExtResource("3_conoa")
 metadata/_edit_use_anchors_ = true
 
 [node name="FallacyList" type="ItemList" parent="."]

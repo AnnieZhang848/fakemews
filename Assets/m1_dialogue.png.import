@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo1lm5garc3fx"
-path="res://.godot/imported/BlueBubble.png-81f298aa757080ff6ee25d488e3dcb76.ctex"
+uid="uid://bj3xnq7d3dqdt"
+path="res://.godot/imported/m1_dialogue.png-a19716aaefe70f4bc113cf06608ea9cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BlueBubble.png"
-dest_files=["res://.godot/imported/BlueBubble.png-81f298aa757080ff6ee25d488e3dcb76.ctex"]
+source_file="res://Assets/m1_dialogue.png"
+dest_files=["res://.godot/imported/m1_dialogue.png-a19716aaefe70f4bc113cf06608ea9cf.ctex"]
 
 [params]
 

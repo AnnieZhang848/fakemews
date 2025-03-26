@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de4dwrmaok6hv"
-path="res://.godot/imported/WhiteBubble.png-d9ae1d6ad6901c67d4a2d2a79bd0d6c4.ctex"
+uid="uid://cjbhn38sj83ty"
+path="res://.godot/imported/ConfirmButton.png-3a60b581a249ade422ca8ad779685961.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/WhiteBubble.png"
-dest_files=["res://.godot/imported/WhiteBubble.png-d9ae1d6ad6901c67d4a2d2a79bd0d6c4.ctex"]
+source_file="res://Assets/ConfirmButton.png"
+dest_files=["res://.godot/imported/ConfirmButton.png-3a60b581a249ade422ca8ad779685961.ctex"]
 
 [params]
 

@@ -1,0 +1,19 @@
+Teacher
+happy : Good morning class!
+happy : That sure was an exciting weekend, wasn't it? A talking cat! How about that? Pretty crazy, huh?
+P : A talking cat? Yeah... I think I did hear something about that. I wonder what people are saying about it.
+serious : Try not to let you distract that from your work though. Today we'll be starting a new topic.
+happy : Logical Fallacies!
+neutral : [SOME EXPLANATION ABOUT WHAT LOGICAL FALLACIES ARE]
+neutral : We'll start by learning about three common ones, then move onto more complex ones during our next classes.
+concerned : Try Keeping an eye out for them in your every day life. It just might surprise you how easily they can be overlooked!
+neutral : The first fallacy we'll talk about is an AD HOMINEM.
+neutral : [DEFINITION]
+neutral : [EXAMPLE]
+neutral : Next up is the STRAWMAN FALLACY.
+neutral : [DEFINITION]
+neutral : [EXAMPLE]
+neutral : Lastly we have the SLIPPERY SLOPE.
+neutral : [DEFINITION]
+neutral : [EXAMPLE]
+neutral : That's all the time we have for today. Remember what I said and have a great rest of your day!

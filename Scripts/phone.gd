@@ -1,6 +1,6 @@
 extends Control
 
-@onready var Post = preload("res://Objects/Post.tscn")
+@onready var Post = preload("res://Objects/Posts/BasePost.tscn")
 @onready var Selection = preload("res://Objects/Selection.tscn")
 
 var Options = ["res://FallacyOptions/Example1.txt"]
@@ -28,8 +28,6 @@ func clean_text(content : String):
 	var options = l[2].split("????")
 	SelectionScreen.SetPossibleText(options)
 	
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -37,10 +35,10 @@ func _ready():
 	add_child(SelectionScreen)
 	SelectionScreen.visible = false
 	load_from_file()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
 
 func _on_trybutton_button_up():
 	SelectionScreen.visible = !SelectionScreen.visible
