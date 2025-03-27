@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcod07ms58a3w"]
+[gd_scene load_steps=3 format=3 uid="uid://dcod07ms58a3w"]
 
 [ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="1_te8ay"]
+[ext_resource type="Script" path="res://Objects/fallacies.gd" id="1_vxskh"]
 
 [node name="Fallacies" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vxskh")
 
 [node name="Description" type="ColorRect" parent="."]
 layout_mode = 1
@@ -44,14 +46,6 @@ anchor_bottom = 0.87963
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_te8ay")
-item_count = 7
-item_0/text = "Fallacy 1"
-item_1/text = "Fallacy 2"
-item_2/text = "Fallacy 3"
-item_3/text = "Fallacy 4"
-item_4/text = "Fallacy 5"
-item_5/text = "Fallacy 6"
-item_6/text = "Fallacy 7"
 metadata/_edit_use_anchors_ = true
 
 [node name="Submit" type="Button" parent="."]
@@ -68,3 +62,5 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Submit"
 metadata/_edit_use_anchors_ = true
+
+[connection signal="item_clicked" from="FallacyList" to="." method="_on_fallacy_list_item_clicked"]

@@ -118,7 +118,7 @@ offset_right = 0.0239258
 offset_bottom = 0.271973
 theme = ExtResource("1_b541w")
 item_count = 3
-item_0/text = "Fallacy1"
+item_0/text = "Strawman"
 item_1/text = "Fallacy2"
 item_2/text = "Fallacy 3"
 

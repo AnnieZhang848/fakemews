@@ -27,6 +27,7 @@ func clean_text(content : String):
 	
 	var options = l[2].split("????")
 	SelectionScreen.SetPossibleText(options)
+	SelectionScreen.IdealAnswer(l[3],l[4])
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
