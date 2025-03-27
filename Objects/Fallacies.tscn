@@ -13,9 +13,9 @@ grow_vertical = 2
 [node name="Description" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.565972
+anchor_left = 0.523438
 anchor_top = 0.0987654
-anchor_right = 0.934611
+anchor_right = 0.892077
 anchor_bottom = 0.87937
 offset_right = 0.328003
 offset_bottom = 0.167969
@@ -37,14 +37,14 @@ metadata/_edit_use_anchors_ = true
 [node name="FallacyList" type="ItemList" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0659722
+anchor_left = 0.207465
 anchor_top = 0.101852
-anchor_right = 0.570313
+anchor_right = 0.510417
 anchor_bottom = 0.87963
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_te8ay")
-item_count = 10
+item_count = 7
 item_0/text = "Fallacy 1"
 item_1/text = "Fallacy 2"
 item_2/text = "Fallacy 3"
@@ -52,9 +52,6 @@ item_3/text = "Fallacy 4"
 item_4/text = "Fallacy 5"
 item_5/text = "Fallacy 6"
 item_6/text = "Fallacy 7"
-item_7/text = "Fallacy 8"
-item_8/text = "Fallacy 9"
-item_9/text = "Fallacy 10"
 metadata/_edit_use_anchors_ = true
 
 [node name="Submit" type="Button" parent="."]

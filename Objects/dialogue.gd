@@ -75,9 +75,11 @@ func set_speaker(n):
 func set_text(s):
 	var text = s.split(" : ")
 	if text[0] == "P":
+		name_tag.hide()
 		speaker.close_mouth()
 		$TextBox.texture = textBoxes["Player"]
 	else:
+		name_tag.show()
 		speaker.set_face(text[0])
 		$TextBox.texture = textBoxes[characters.find_key(speaker)]
 	dialogue.text = text[1]

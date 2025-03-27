@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=21 format=4 uid="uid://bgod22o80c88u"]
+[gd_resource type="Theme" load_steps=22 format=4 uid="uid://bgod22o80c88u"]
+
+[ext_resource type="Texture2D" uid="uid://77kei7755n40" path="res://Assets/Notes.png" id="1_g6hiu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ra70"]
 
@@ -8,8 +10,17 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pfasp"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8egxd"]
-bg_color = Color(0.188235, 0.745098, 0.6, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_flid0"]
+content_margin_left = 15.0
+content_margin_top = 40.0
+texture = ExtResource("1_g6hiu")
+expand_margin_left = 10.0
+expand_margin_top = 15.0
+expand_margin_right = 10.0
+expand_margin_bottom = 15.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(0, 0, 1000, 1500)
 
 [sub_resource type="Image" id="Image_8o3jt"]
 data = {
@@ -2694,10 +2705,10 @@ Button/styles/hover = SubResource("StyleBoxEmpty_vftvs")
 Button/styles/normal = SubResource("StyleBoxEmpty_q8prw")
 Button/styles/pressed = SubResource("StyleBoxEmpty_pfasp")
 ItemList/colors/font_color = Color(0, 0, 0, 1)
-ItemList/constants/h_separation = 10
-ItemList/constants/v_separation = 10
+ItemList/constants/h_separation = 20
+ItemList/constants/v_separation = 35
 ItemList/font_sizes/font_size = 20
-ItemList/styles/panel = SubResource("StyleBoxFlat_8egxd")
+ItemList/styles/panel = SubResource("StyleBoxTexture_flid0")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
