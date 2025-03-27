@@ -9,7 +9,7 @@ var speaker
 var name_tag : Label
 var dialogue : RichTextLabel
 
-var textFiles = ["res://Dialogue/Scene1.txt","res://Dialogue/Scene2.txt"]
+@export var scene_list = ["Scene1","Scene2"]
 var cur_scene = 0
 var scene_text : Array
 var cur_text = 0
@@ -20,25 +20,14 @@ var textBoxes = {
 	"Player" : load("res://Assets/p_dialogue.png")
 }
 
-signal scene_ended(scene_num)
+signal scene_started(scene_num : int)
+signal scene_ended(scene_num : int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	init()
 	load_from_file(cur_scene)
-
-func load_from_file(index : int = 0):
-	if index < 0 or FileAccess.file_exists(textFiles[index]) == false:
-		print("Error loading from index: %s" % index)
-		return
-	var file = FileAccess.open(textFiles[index],FileAccess.READ)
-	var content = file.get_as_text().rstrip("\n")
-	scene_text = content.split("\n")
-	set_speaker(scene_text.pop_front())
 	
-	set_text(scene_text[cur_text])
-	file.close()
-
 func init():
 	name_tag = $TextBox/Name
 	dialogue = $TextBox/Dialogue
@@ -51,18 +40,27 @@ func init():
 	characters["Friend1"] = friend1
 	characters["Ava"] = friend2
 
+func load_from_file(index : int = 0):
+	var filename = "res://Dialogue/%s.txt" % scene_list[index]
+	if index < 0 or FileAccess.file_exists(filename) == false:
+		print("Error loading from index: %s" % index)
+		return
+	var file = FileAccess.open(filename,FileAccess.READ)
+	var content = file.get_as_text().rstrip("\n")
+	scene_text = content.split("\n")
+	set_speaker(scene_text.pop_front())
+	
+	set_text(scene_text[cur_text])
+	file.close()
+	scene_started.emit(cur_scene)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Next_Text"):
-		if cur_text < len(scene_text)-1:
-			cur_text += 1
-			set_text(scene_text[cur_text])
-		else:
-			scene_ended.emit(cur_scene)
-			cur_scene += 1
-			if cur_scene < len(textFiles):
-				cur_text = 0
-				load_from_file(cur_scene)
+	if Input.is_action_just_pressed("Next_Text") and get_parent().visible:
+		next_text()
+
+func _on_next_button_pressed() -> void:
+	next_text()
 
 func set_speaker(n):
 	if speaker != null:
@@ -84,13 +82,13 @@ func set_text(s):
 		$TextBox.texture = textBoxes[characters.find_key(speaker)]
 	dialogue.text = text[1]
 
-func _on_next_button_pressed() -> void:
+func next_text():
 	if cur_text < len(scene_text)-1:
 		cur_text += 1
 		set_text(scene_text[cur_text])
 	else:
 		scene_ended.emit(cur_scene)
 		cur_scene += 1
-		if cur_scene < len(textFiles):
+		if cur_scene < len(scene_list):
 			cur_text = 0
 			load_from_file(cur_scene)
