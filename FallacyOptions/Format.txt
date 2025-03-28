@@ -1,21 +1,12 @@
-Format file for fallacy propmts. All sections must be seperated with "////" and all subsections with "????"
-Refer to Example 1 for help. 
-
-
-
-Title
+Option 1, aka the first paragraph from your post.
+????
+Option 2, make sure to split them with 4 question marks.
+That way you can have line breaks inside the options if needed.
+????
+Option 3, you can have more than 3 btw. The number doesn't rlly matter, but at least 3 is probably best for difficulty.
 ////
-Body
+Correct answer (Copy paste the text exactly from your options)
 ////
-Options
-	Option 1 
-	????
-	Option 2
-	????
-	Option 3
+Correct fallacy
 ////
-Type of Fallacy
-////
-Example of said Fallacy (Option 1, 2 or 3)
-////
-Explanation of fallacy
+Explanation of some sort - this will be displayed when the correct answer is selected and explain why that answer is right.

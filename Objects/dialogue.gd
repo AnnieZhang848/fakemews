@@ -9,7 +9,8 @@ var speaker
 var name_tag : Label
 var dialogue : RichTextLabel
 
-@export var scene_list = ["Scene1","Scene2"]
+@export var scene_list = ["Scene1"]
+#@export var scene_list = ["Friend1_Expressions","Friend2_Expressions","Teacher_Expressions"]
 var cur_scene = 0
 var scene_text : Array
 var cur_text = 0
@@ -20,7 +21,7 @@ var textBoxes = {
 	"Player" : load("res://Assets/p_dialogue.png")
 }
 
-signal scene_started(scene_num : int)
+signal scene_started(bg : String)
 signal scene_ended(scene_num : int)
 
 # Called when the node enters the scene tree for the first time.
@@ -49,10 +50,10 @@ func load_from_file(index : int = 0):
 	var content = file.get_as_text().rstrip("\n")
 	scene_text = content.split("\n")
 	set_speaker(scene_text.pop_front())
+	scene_started.emit(scene_text.pop_front().rstrip("\n"))
 	
 	set_text(scene_text[cur_text])
 	file.close()
-	scene_started.emit(cur_scene)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

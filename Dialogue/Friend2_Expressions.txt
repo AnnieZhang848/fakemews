@@ -1,0 +1,10 @@
+Ava
+park.jpg
+neutral : neutral
+happy : happy
+excited : excited
+concerned : concerned
+serious : serious
+upset : upset
+shocked : shocked
+complaining : complaining

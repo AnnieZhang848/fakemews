@@ -1,4 +1,5 @@
 Teacher
+classroom.png
 happy : Good morning class!
 excited : That sure was an exciting weekend, wasn't it? A talking cat! How about that? Pretty crazy, huh?
 P : A talking cat? Yeah... I think I did hear something about that. I wonder what people are saying about it.

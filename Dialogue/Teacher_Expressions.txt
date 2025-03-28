@@ -1,0 +1,7 @@
+Teacher
+classroom.png
+neutral : neutral
+happy : happy
+excited : excited
+serious : serious
+concerned : concerned

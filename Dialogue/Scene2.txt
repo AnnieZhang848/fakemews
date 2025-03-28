@@ -1,4 +1,0 @@
-Friend1
-happy : Good morning class!
-happy : That sure was an exciting weekend, wasn't it? A talking cat! How about that? Pretty crazy, huh?
-P : 
