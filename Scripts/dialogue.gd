@@ -16,8 +16,8 @@ var scene_text : Array
 var cur_text = 0
 var textBoxes = {
 	"Teacher" : load("res://Assets/f1_dialogue.png"),
-	"Friend1" : load("res://Assets/m1_dialogue.png"),
-	"Ava" : load("res://Assets/f2_dialogue.png"),
+	"Evan" : load("res://Assets/m1_dialogue.png"),
+	"Leah" : load("res://Assets/f2_dialogue.png"),
 	"Player" : load("res://Assets/p_dialogue.png")
 }
 
@@ -38,8 +38,8 @@ func init():
 	friend2 = $Characters/Ava
 	
 	characters["Teacher"] = teacher
-	characters["Friend1"] = friend1
-	characters["Ava"] = friend2
+	characters["Evan"] = friend1
+	characters["Leah"] = friend2
 
 func load_from_file(index : int = 0):
 	var filename = "res://Dialogue/%s.txt" % scene_list[index]

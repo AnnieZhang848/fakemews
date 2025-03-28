@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcod07ms58a3w"]
+[gd_scene load_steps=4 format=3 uid="uid://dcod07ms58a3w"]
 
 [ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="1_te8ay"]
-[ext_resource type="Script" path="res://Objects/fallacies.gd" id="1_vxskh"]
+[ext_resource type="Script" path="res://Scripts/fallacies.gd" id="1_vxskh"]
+[ext_resource type="Texture2D" uid="uid://bxibyj3q5prqy" path="res://Assets/Notes_2.png" id="2_0pejm"]
 
 [node name="Fallacies" type="Control"]
 layout_mode = 3
@@ -12,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vxskh")
 
-[node name="Description" type="ColorRect" parent="."]
+[node name="Description" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.523438
@@ -21,19 +22,33 @@ anchor_right = 0.892077
 anchor_bottom = 0.87937
 offset_right = 0.328003
 offset_bottom = 0.167969
+texture = ExtResource("2_0pejm")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="Description"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0635281
+anchor_top = 0.152174
+anchor_right = 0.750469
+anchor_bottom = 0.214961
+offset_right = 0.0499878
+offset_bottom = 0.230011
+theme = ExtResource("1_te8ay")
+text = "NOTES:"
 metadata/_edit_use_anchors_ = true
 
 [node name="DescriptionText" type="RichTextLabel" parent="Description"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.052506
-anchor_top = 0.0434783
-anchor_right = 0.940334
-anchor_bottom = 0.922925
+anchor_left = 0.0682353
+anchor_top = 0.235178
+anchor_right = 0.938823
+anchor_bottom = 0.873518
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_te8ay")
-text = "A description of the currently selected fallacy?"
 metadata/_edit_use_anchors_ = true
 
 [node name="FallacyList" type="ItemList" parent="."]

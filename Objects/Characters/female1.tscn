@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://denrn8ik01ksf"]
 
 [ext_resource type="Texture2D" uid="uid://d4m7x86w6t0hk" path="res://Assets/Character Sprites/fm01/fm01-body.png" id="1_u3cvs"]
-[ext_resource type="Script" path="res://Scripts/female_1.gd" id="1_unlgt"]
+[ext_resource type="Script" path="res://Scripts/Characters/female_1.gd" id="1_unlgt"]
 [ext_resource type="SpriteFrames" uid="uid://dybemui7r4hya" path="res://Objects/Characters/faces.tres" id="2_pvt1g"]
 
 [node name="Female1" type="Node2D"]
