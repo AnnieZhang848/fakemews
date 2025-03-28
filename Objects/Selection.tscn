@@ -82,7 +82,7 @@ theme = ExtResource("1_b541w")
 text = "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 1
+autowrap_mode = 2
 clip_text = true
 metadata/_edit_use_anchors_ = true
 
@@ -117,10 +117,6 @@ offset_top = 0.135994
 offset_right = 0.0239258
 offset_bottom = 0.271973
 theme = ExtResource("1_b541w")
-item_count = 3
-item_0/text = "Strawman"
-item_1/text = "Fallacy2"
-item_2/text = "Fallacy 3"
 
 [connection signal="button_up" from="Confirm" to="." method="_on_confirm_button_up"]
 [connection signal="button_up" from="Selection/Up" to="." method="_on_up_button_up"]

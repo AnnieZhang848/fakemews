@@ -1,5 +1,27 @@
 extends Control
 
+@export var numUnlocks = 3 
+var unlocks = ["Ad Hominem","Slipper Slope","Appeal to Authority","Appeal to Pity","Hasty Generalization","Red Hearring"]
+var FileOptions = ["res://FallacyOptions/Example1.txt"]
+
+@onready var FallacyNotes = $Fallacies
+@onready var Select = $Game/Selection
+
+func _process(delta):
+	FallacyNotes.unlocks = unlocks
+	FallacyNotes.numUnlocks = 3
+
+func _ready():
+		SetSelectionScreen()
+
+func SetSelectionScreen(index : int = 0):
+		Select.PresentOptions(numUnlocks,unlocks,FileOptions[index])
+		Select.visible = true
+
+func incrementUnlocks():
+	FallacyNotes.incrementUnlocks()
+	numUnlocks +=1
+
 # When a scene ends, check what it should be followed by and show the correct scene
 func _on_game_scene_ended(scene_num: Variant) -> void:
 	pass

@@ -1,16 +1,13 @@
-Something Somthing Title
-////
-res://Assets/idk.jpg
-////
-	We should have stricter environmental regulations to protect our planet
-	????
-	Person A wants to shut down all industries and put everyone out of work
-	????
-	How can we afford to live in a world with no jobs?
-////
-Strawman
+
+We should have stricter environmental regulations to protect our planet
+????
+Person A wants to shut down all industries and put everyone out of work
+????
+How can we afford to live in a world with no jobs?
 ////
 Person A wants to shut down all industries and put everyone out of work
+////
+Strawman
 //// 
 This is a classic strawman fallacy.
 In this case, Person B misrepresents Person A's position by exaggerating it (implying they want to shut down all industries), 

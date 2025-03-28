@@ -34,6 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Dialogue" parent="Game" instance=ExtResource("1_bc467")]
+visible = false
 layout_mode = 1
 
 [node name="Phone" parent="Game" instance=ExtResource("2_5uybq")]
