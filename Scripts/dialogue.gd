@@ -57,7 +57,7 @@ func load_from_file(index : int = 0):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Next_Text") and get_parent().visible:
+	if Input.is_action_just_released("Next_Text") and get_parent().is_visible():
 		next_text()
 
 func _on_next_button_pressed() -> void:

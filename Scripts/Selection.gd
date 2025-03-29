@@ -4,6 +4,8 @@ var FallacySelected
 var TextSelected
 @onready var FallacyList = $FallacyList
 @onready var TextSelection = $Selection/OptionText
+@onready var DownButton = $Selection/Down
+@onready var UpButton = $Selection/Up
 
 var PossibleText = [""]
 var index = 0
@@ -12,8 +14,16 @@ var IdealFallacy = ""
 var IdealText = ""
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _process(delta: float) -> void:
+	if index == 0:
+		UpButton.hide()
+	else:
+		UpButton.show()
+		
+	if index == PossibleText.size() - 1:
+		DownButton.hide()
+	else:
+		DownButton.show()
 
 ###For Setting possible sentences to indentify as fallacies ----- GIVE AN ARRAY OF STRING ONLY [split("????")]
 #func SetPossibleText(PT):
@@ -35,7 +45,7 @@ func PresentOptions(numUnlocks : int, unlocks, File : String):
 	SetOptionText()
 	
 	while (opt.size() < 3):
-		var r=  rand.randi_range(0,numUnlocks)
+		var r=  rand.randi_range(0,numUnlocks-1)
 		if(opt.has(unlocks[r]) == false):
 			
 			opt.append(unlocks[r] as String)
@@ -46,9 +56,6 @@ func PresentOptions(numUnlocks : int, unlocks, File : String):
 		
 	for o in opt:
 		FallacyList.add_item(o)
-
-	
-	
 
 func load_from_file(file : String):
 	if FileAccess.file_exists(file) == false:
@@ -68,29 +75,20 @@ func clean_text(content : String):
 	for s in split[0].split("????"):
 		PossibleText.append(s.strip_edges())
 		
-
 func _on_fallacy_list_item_clicked(index, at_position, mouse_button_index):
 	FallacySelected = FallacyList.get_item_text(index)
-	
 
 func SetOptionText():
 	TextSelection.text = PossibleText[index]
 
 func _on_up_button_up():
-	index = (1 + index) % PossibleText.size()
+	index -= 1
 	SetOptionText()
-
 
 func _on_down_button_up():
-	index -= 1
-	if index < 0:
-		index = PossibleText.size() - 1
+	index += 1
 	SetOptionText()
 
-
 func _on_confirm_button_up():
-	#print(PossibleText[index])
-	#print(IdealText)
 	var a = (PossibleText[index].contains(IdealText)) and (FallacySelected.contains(IdealFallacy))
 	print(a)
-	pass # Replace with function body.

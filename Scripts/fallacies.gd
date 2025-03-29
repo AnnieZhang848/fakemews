@@ -5,15 +5,12 @@ var selected
 @onready var disc = $Description/DescriptionText
 
 @export var unlocks = []
-@export var numUnlocks =0 
+@export var numUnlocks = 0
 
-
-var FallacyDict = {"Ad Hominem":"Ad Hominem EX","Slipper Slope":"Slippery Slope Ex", "Appeal to Authority":"Appeal to Authority Ex","Appeal to Pity":"Appeal To Pity Ex","Hasty Generalization":"Hasty Ex","Red Hearring":"Red Hearring Ex"}
-
-
+var FallacyDict = {"Ad Hominem":"Ad Hominem EX","Slippery Slope":"Slippery Slope Ex", "Appeal to Authority":"Appeal to Authority Ex","Appeal to Pity":"Appeal To Pity Ex","Hasty Generalization":"Hasty Ex","Red Herring":"Red Herring Ex"}
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func init():
 	for n in range(numUnlocks):
 		var e = unlocks[n]
 		List.add_item(e)
@@ -28,8 +25,6 @@ func numFallacyUnlocked():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
 
 func _on_fallacy_list_item_clicked(index, at_position, mouse_button_index):
 	selected = index; 

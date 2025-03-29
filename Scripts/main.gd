@@ -1,22 +1,23 @@
 extends Control
 
 @export var numUnlocks = 3 
-var unlocks = ["Ad Hominem","Slipper Slope","Appeal to Authority","Appeal to Pity","Hasty Generalization","Red Hearring"]
+var unlocks = ["Ad Hominem","Slippery Slope","Appeal to Authority","Appeal to Pity","Hasty Generalization","Red Herring"]
 var FileOptions = ["res://FallacyOptions/Example1.txt"]
 
 @onready var FallacyNotes = $Fallacies
 @onready var Select = $Game/Selection
 
 func _process(delta):
-	FallacyNotes.unlocks = unlocks
-	FallacyNotes.numUnlocks = 3
+	pass
 
 func _ready():
-		SetSelectionScreen()
+	SetSelectionScreen()
+	FallacyNotes.unlocks = unlocks
+	FallacyNotes.numUnlocks = 3
+	FallacyNotes.init()
 
 func SetSelectionScreen(index : int = 0):
-		Select.PresentOptions(numUnlocks,unlocks,FileOptions[index])
-		Select.visible = true
+	Select.PresentOptions(numUnlocks,unlocks,FileOptions[index])
 
 func incrementUnlocks():
 	FallacyNotes.incrementUnlocks()

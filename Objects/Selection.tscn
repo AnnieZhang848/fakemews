@@ -68,22 +68,22 @@ theme = ExtResource("1_b541w")
 icon = ExtResource("3_conoa")
 metadata/_edit_use_anchors_ = true
 
-[node name="OptionText" type="Label" parent="Selection"]
+[node name="OptionText" type="RichTextLabel" parent="Selection"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.31808
-anchor_right = 1.0
-anchor_bottom = 0.867187
+anchor_left = -0.0186336
+anchor_top = 0.449777
+anchor_right = 0.981366
+anchor_bottom = 0.726562
 offset_top = -0.5
 offset_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_b541w")
-text = "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-clip_text = true
+bbcode_enabled = true
+text = "[center]//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////[/center]"
+fit_content = true
+scroll_active = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Down" type="Button" parent="Selection"]
