@@ -9,9 +9,9 @@ var speaker
 var name_tag : Label
 var dialogue : RichTextLabel
 
-@export var scene_list = ["Class1","Test1","Class2","Test2","Class3","Test3","Class4","Test4","Class5","Test5"]
+@export var scene_list = ["Class1","Test1","Response1","Class2","Test2","Response2","Class3","Test3","Response3","Class4","Test4","Response4","Class5","Test5","Response5"]
 #@export var scene_list = ["Friend1_Expressions","Friend2_Expressions","Teacher_Expressions"]
-var cur_scene : int = 0
+@export var cur_scene : int = 0
 var scene_text : Array
 var cur_text : int = 0
 var textBoxes = {
@@ -104,7 +104,6 @@ func next_text():
 		cur_text += 1
 		set_text(scene_text[cur_text])
 	else:
-		print(cur_scene)
 		cur_text = 0
 		scene_ended.emit(cur_scene)
 		cur_scene += 1

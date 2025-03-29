@@ -10,6 +10,8 @@ signal correct_answer
 @onready var DownButton = $Selection/Down
 @onready var UpButton = $Selection/Up
 
+var FileOptions = ["res://FallacyOptions/Example1.txt"]
+
 var PossibleText = [""]
 var index = 0
 
@@ -40,11 +42,11 @@ func _process(delta: float) -> void:
 
 
 ##Sets up the Selection Screen. Supply with numUnlocks, array of Unlocks, and filename of the example used
-func PresentOptions(numUnlocks : int, unlocks, File : String):
+func PresentOptions(numUnlocks : int, unlocks, File : int):
 	var rand = RandomNumberGenerator.new()
 	var opt = []
 	
-	load_from_file(File)
+	load_from_file(FileOptions[File])
 	SetOptionText()
 	
 	while (opt.size() < 3):
