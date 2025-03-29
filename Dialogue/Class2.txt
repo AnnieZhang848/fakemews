@@ -1,0 +1,7 @@
+Teacher
+classroom.png
+serious : Alright class, settle down. Another day, another fallacy.
+excited : Today’s lesson is about APPEALS TO AUTHORITY.
+neutral : In an appeal to authority, the arguer claims an authority figure’s expertise to support a claim, despite this expertise being irrelevant or overstated.
+neutral : For example, one could say, "If you want to be healthy, you need to stop drinking coffee. I read it on a fitness blog."
+neutral : Here, the authority figure is...

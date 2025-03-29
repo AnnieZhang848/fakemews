@@ -2,6 +2,9 @@ extends Control
 
 var FallacySelected
 var TextSelected
+
+signal correct_answer
+
 @onready var FallacyList = $FallacyList
 @onready var TextSelection = $Selection/OptionText
 @onready var DownButton = $Selection/Down
@@ -92,3 +95,5 @@ func _on_down_button_up():
 func _on_confirm_button_up():
 	var a = (PossibleText[index].contains(IdealText)) and (FallacySelected.contains(IdealFallacy))
 	print(a)
+	#if a:
+	emit_signal("correct_answer")

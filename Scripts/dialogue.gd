@@ -9,11 +9,11 @@ var speaker
 var name_tag : Label
 var dialogue : RichTextLabel
 
-@export var scene_list = ["Scene1"]
+@export var scene_list = ["Class1","Test1","Class2","Test2","Class3","Test3","Class4","Test4","Class5","Test5"]
 #@export var scene_list = ["Friend1_Expressions","Friend2_Expressions","Teacher_Expressions"]
-var cur_scene = 0
+var cur_scene : int = 0
 var scene_text : Array
-var cur_text = 0
+var cur_text : int = 0
 var textBoxes = {
 	"Teacher" : load("res://Assets/f1_dialogue.png"),
 	"Evan" : load("res://Assets/m1_dialogue.png"),
@@ -27,21 +27,24 @@ signal scene_ended(scene_num : int)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	init()
-	load_from_file(cur_scene)
+	load_scene(cur_scene)
 	
 func init():
 	name_tag = $TextBox/Name
 	dialogue = $TextBox/Dialogue
 	
 	teacher = $Characters/Teacher
-	friend1 = $Characters/Male1
-	friend2 = $Characters/Ava
+	friend1 = $Characters/Evan
+	friend2 = $Characters/Leah
 	
 	characters["Teacher"] = teacher
 	characters["Evan"] = friend1
 	characters["Leah"] = friend2
 
-func load_from_file(index : int = 0):
+func load_scene(index : int = cur_scene):
+	if index > len(scene_list):
+		return
+	
 	var filename = "res://Dialogue/%s.txt" % scene_list[index]
 	if index < 0 or FileAccess.file_exists(filename) == false:
 		print("Error loading from index: %s" % index)
@@ -63,6 +66,7 @@ func _process(delta: float) -> void:
 func _on_next_button_pressed() -> void:
 	next_text()
 
+# Set the character sprite to the current speaker
 func set_speaker(n):
 	if speaker != null:
 		speaker.hide()
@@ -71,25 +75,36 @@ func set_speaker(n):
 	name_tag.text = n
 	$TextBox.texture = textBoxes[n]
 
+# Update the text/text boxes and update the speaker's expression
 func set_text(s):
-	var text = s.split(" : ")
-	if text[0] == "P":
-		name_tag.hide()
-		speaker.close_mouth()
-		$TextBox.texture = textBoxes["Player"]
+	if s == "PHONE":
+		$Characters.hide()
+		$TextBox.hide()
+		$Phone.show()
 	else:
-		name_tag.show()
-		speaker.set_face(text[0])
-		$TextBox.texture = textBoxes[characters.find_key(speaker)]
-	dialogue.text = text[1]
+		$Characters.show()
+		$TextBox.show()
+		$Phone.hide()
+		
+		var text = s.split(" : ")
+		if text[0] == "P":
+			name_tag.hide()
+			speaker.close_mouth()
+			$TextBox.texture = textBoxes["Player"]
+		else:
+			name_tag.show()
+			speaker.set_face(text[0])
+			$TextBox.texture = textBoxes[characters.find_key(speaker)]
+		dialogue.text = text[1]
 
+# Switch the current text
+# Switch the scene if needed
 func next_text():
 	if cur_text < len(scene_text)-1:
 		cur_text += 1
 		set_text(scene_text[cur_text])
 	else:
+		print(cur_scene)
+		cur_text = 0
 		scene_ended.emit(cur_scene)
 		cur_scene += 1
-		if cur_scene < len(scene_list):
-			cur_text = 0
-			load_from_file(cur_scene)
