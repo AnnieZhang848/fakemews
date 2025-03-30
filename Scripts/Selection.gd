@@ -43,6 +43,8 @@ func _process(delta: float) -> void:
 
 ##Sets up the Selection Screen. Supply with numUnlocks, array of Unlocks, and filename of the example used
 func PresentOptions(numUnlocks : int, unlocks, File : int):
+	FallacyList.clear()
+	
 	var rand = RandomNumberGenerator.new()
 	var opt = []
 	
@@ -96,6 +98,8 @@ func _on_down_button_up():
 
 func _on_confirm_button_up():
 	var a = (PossibleText[index].contains(IdealText)) and (FallacySelected.contains(IdealFallacy))
-	print(a)
+	if(a):
+		emit_signal("correct_answer")
+	#print(a)
 	#if a:
-	emit_signal("correct_answer")
+	
