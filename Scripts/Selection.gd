@@ -30,17 +30,6 @@ func _process(delta: float) -> void:
 	else:
 		DownButton.show()
 
-###For Setting possible sentences to indentify as fallacies ----- GIVE AN ARRAY OF STRING ONLY [split("????")]
-#func SetPossibleText(PT):
-	#PossibleText = PT
-	#SetOptionText()
-#
-###Set correct asnwer for Falacy (EX: Strawman) and for the correct sentence
-#func IdealAnswer(Fal,text):
-	#IdealFallacy = Fal.strip_edges()
-	#IdealText = text.strip_edges()
-
-
 ##Sets up the Selection Screen. Supply with numUnlocks, array of Unlocks, and filename of the example used
 func PresentOptions(numUnlocks : int, unlocks, File : int):
 	FallacyList.clear()
@@ -99,7 +88,5 @@ func _on_down_button_up():
 func _on_confirm_button_up():
 	var a = (PossibleText[index].contains(IdealText)) and (FallacySelected.contains(IdealFallacy))
 	if(a):
-		emit_signal("correct_answer")
-	#print(a)
-	#if a:
+		correct_answer.emit()
 	

@@ -78,14 +78,14 @@ func set_speaker(n):
 # Update the text/text boxes and update the speaker's expression
 func set_text(s):
 	if s == "PHONE":
-		$Characters.hide()
-		$TextBox.hide()
+		slide_char(false)
 		$Phone.show()
-	else:
-		$Characters.show()
-		$TextBox.show()
+		next_text()
+	elif s == "NOPHONE":
+		slide_char(true)
 		$Phone.hide()
-		
+		next_text()
+	else:
 		var text = s.split(" : ")
 		if text[0] == "P":
 			name_tag.hide()
@@ -107,3 +107,9 @@ func next_text():
 		cur_text = 0
 		scene_ended.emit(cur_scene)
 		cur_scene += 1
+
+func slide_char(centered):
+	if centered:
+		$Characters.global_position.x = 0
+	else:
+		$Characters.global_position.x = 300

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://7gmadh45wgn8"]
+[gd_scene load_steps=10 format=3 uid="uid://7gmadh45wgn8"]
 
 [ext_resource type="Script" path="res://Scripts/dialogue.gd" id="1_4erna"]
 [ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="2_q48wf"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://Scripts/Characters/male_1.gd" id="3_teyni"]
 [ext_resource type="Script" path="res://Scripts/Characters/female_2.gd" id="6_7ajmr"]
 [ext_resource type="Texture2D" uid="uid://cnkjkcsqbbd7e" path="res://Assets/p_dialogue.png" id="7_5dkov"]
-[ext_resource type="PackedScene" uid="uid://gs3w0ha63pxi" path="res://Objects/Phone.tscn" id="7_mt477"]
 [ext_resource type="Texture2D" uid="uid://dmgwh6txasfvc" path="res://Assets/NextButton.png" id="8_hbr2v"]
 
 [node name="Game" type="Control"]
@@ -47,10 +46,6 @@ visible = false
 position = Vector2(162, -1)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("6_7ajmr")
-
-[node name="Phone" parent="." instance=ExtResource("7_mt477")]
-visible = false
-layout_mode = 1
 
 [node name="TextBox" type="TextureRect" parent="."]
 layout_mode = 1
