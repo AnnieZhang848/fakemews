@@ -126,7 +126,3 @@ func _on_confirm_button_up():
 
 func _on_dialogue_button_button_up():
 	$ErrorDialogueBox.visible = false
-
-func _on_hints_button_up():
-	enableHints()
-	

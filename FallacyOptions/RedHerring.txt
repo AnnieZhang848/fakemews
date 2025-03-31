@@ -6,4 +6,4 @@
 ////
 [center][img=300x300]res://Assets/Posts/Insta2.png[/img][center]
 ////
-Hasty Generalization
+Red Herring

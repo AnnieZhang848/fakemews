@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://1tehy8n4fosh"]
+[gd_scene load_steps=18 format=3 uid="uid://1tehy8n4fosh"]
 
 [ext_resource type="PackedScene" uid="uid://7gmadh45wgn8" path="res://Objects/Dialogue.tscn" id="1_bc467"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_htgat"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://1mjrp4r2kjxf" path="res://Assets/Buttons/close_idle.png" id="10_lfuh3"]
 [ext_resource type="Texture2D" uid="uid://csk1f07ns3nn" path="res://Assets/Buttons/close_pressed.png" id="11_4kh1o"]
 [ext_resource type="Texture2D" uid="uid://mauoe5r3a1xv" path="res://Assets/Buttons/close_hover.png" id="12_bibxj"]
+[ext_resource type="PackedScene" uid="uid://c51hr7xdgs2y" path="res://Objects/StartMenu.tscn" id="13_lp7fe"]
 
 [sub_resource type="Animation" id="Animation_pr7mr"]
 resource_name = "fade out"
@@ -183,16 +184,6 @@ visible = false
 layout_mode = 1
 mouse_filter = 2
 
-[node name="Background" type="ColorRect" parent="Fallacies"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0.392157)
-
 [node name="CloseNotes" type="TextureButton" parent="Fallacies"]
 layout_mode = 1
 anchors_preset = -1
@@ -209,10 +200,19 @@ texture_normal = ExtResource("10_lfuh3")
 texture_pressed = ExtResource("11_4kh1o")
 texture_hover = ExtResource("12_bibxj")
 
+[node name="StartMenu" parent="." instance=ExtResource("13_lp7fe")]
+layout_mode = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_sosr6")
 }
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+max_polyphony = 2
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
 
 [connection signal="friend_talking" from="Game/Dialogue" to="." method="_on_dialogue_friend_talking"]
 [connection signal="scene_ended" from="Game/Dialogue" to="." method="_on_game_scene_ended"]
@@ -221,3 +221,4 @@ libraries = {
 [connection signal="post_set" from="Game/Selection" to="." method="_on_selection_post_set"]
 [connection signal="pressed" from="Game/OpenNotes" to="." method="_on_open_notes_pressed"]
 [connection signal="pressed" from="Fallacies/CloseNotes" to="." method="_on_close_notes_pressed"]
+[connection signal="game_start" from="StartMenu" to="." method="_on_start_menu_game_start"]

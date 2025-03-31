@@ -8,12 +8,18 @@ var selectionScreen = 0
 @onready var Dialogue = $Game/Dialogue
 @onready var Select = $Game/Selection
 @onready var OpenNotes = $Game/OpenNotes
+@onready var BGM = $BackgroundMusic
+
+var music = {
+	"Teacher" : "res://Assets/Sounds/Teacher.ogg",
+	"Evan" : "res://Assets/Sounds/Evan.ogg",
+	"Leah" : "res://Assets/Sounds/Teacher.ogg"
+}
 
 func _ready():
 	Dialogue.show()
 	Select.hide()
 	OpenNotes.hide()
-	$AnimationPlayer.play("fade in")
 
 func SetSelectionScreen():
 	Select.PresentOptions(numUnlocks,unlocks,selectionScreen)
@@ -28,7 +34,6 @@ func _set_background(bg: String) -> void:
 
 # When a scene ends, check what it should be followed by and show the correct scene
 func _on_game_scene_ended(scene_num: int) -> void:
-	print(scene_num)
 	match scene_num:
 		0:
 			Notes.init(unlocks, numUnlocks)
@@ -42,6 +47,7 @@ func _on_game_scene_ended(scene_num: int) -> void:
 			Dialogue.hide()
 		2,5,8,11:
 			$AnimationPlayer.play("fade out")
+			switch_music("Teacher")
 			Dialogue.load_scene(scene_num+1)
 			$AnimationPlayer.play("fade in")
 			SetSelectionScreen()
@@ -51,6 +57,10 @@ func _on_game_scene_ended(scene_num: int) -> void:
 			$AnimationPlayer.play("fade out")
 			Dialogue.load_scene(scene_num+1)
 			$AnimationPlayer.play("fade in")
+		14:
+			Notes.show()
+			$Game.hide()
+			$Fallacies/CloseNotes.hide()
 
 # Open and close the notes page
 func _on_open_notes_pressed() -> void:
@@ -70,6 +80,17 @@ func _on_selection_correct_answer() -> void:
 func _on_dialogue_friend_talking(friend: String) -> void:
 	$Game/Dialogue/Phone.set_char(friend)
 	$Game/Selection/Part2/Phone.set_char(friend)
+	switch_music(friend)
 
 func _on_selection_post_set(post: String) -> void:
 	$Game/Dialogue/Phone.set_post(post)
+
+func switch_music(f):
+	var file = load("res://Assets/Sounds/%s.ogg" % f)
+	if BGM.stream != file:
+		BGM.stream = file
+		BGM.play()
+
+func _on_start_menu_game_start() -> void:
+	$AnimationPlayer.play("fade in")
+	switch_music("Teacher")

@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://c51hr7xdgs2y"]
+
+[ext_resource type="Script" path="res://Scripts/start_menu.gd" id="1_t7w65"]
+[ext_resource type="Texture2D" uid="uid://hd5nxad4r6e3" path="res://Assets/Buttons/button_red_idle.png" id="1_tha84"]
+[ext_resource type="Texture2D" uid="uid://cc5w3ornt6q6u" path="res://Assets/Buttons/button_red_pressed.png" id="2_wixp6"]
+[ext_resource type="Texture2D" uid="uid://dyuigbpu3pa53" path="res://Assets/Buttons/button_red_hover.png" id="3_rp53c"]
+[ext_resource type="Texture2D" uid="uid://f1usbqyxqm7u" path="res://Assets/Buttons/button_purple_idle.png" id="4_bekgk"]
+[ext_resource type="Texture2D" uid="uid://cyeah50b22kwt" path="res://Assets/Buttons/button_purple_pressed.png" id="5_1l5st"]
+[ext_resource type="Texture2D" uid="uid://xjuaao4exegj" path="res://Assets/Buttons/button_purple_hover.png" id="6_q4f6c"]
+[ext_resource type="AudioStream" uid="uid://bh8qlx1243p2s" path="res://Assets/Sounds/Menu.ogg" id="8_df4h6"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7w65")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.698039, 0.443137, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.226562
+anchor_right = 1.0
+anchor_bottom = 0.438562
+offset_top = 0.187988
+offset_bottom = -0.188019
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Fake Mews!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Start" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.344917
+anchor_top = 0.476852
+anchor_right = 0.655951
+anchor_bottom = 0.615975
+offset_left = -0.344025
+offset_right = 0.343933
+offset_bottom = -11.152
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_tha84")
+texture_pressed = ExtResource("2_wixp6")
+texture_hover = ExtResource("3_rp53c")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Start"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level Select" type="TextureButton" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.344917
+anchor_top = 0.643519
+anchor_right = 0.655951
+anchor_bottom = 0.782642
+offset_left = -0.344025
+offset_right = 0.343933
+offset_bottom = -11.152
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_bekgk")
+texture_pressed = ExtResource("5_1l5st")
+texture_hover = ExtResource("6_q4f6c")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Level Select"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Level Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_df4h6")
+autoplay = true
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

@@ -65,19 +65,15 @@ theme = ExtResource("1_te8ay")
 allow_search = false
 metadata/_edit_use_anchors_ = true
 
-[node name="Submit" type="Button" parent="."]
-visible = false
+[node name="Background" type="ColorRect" parent="."]
+show_behind_parent = true
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.8825
-anchor_top = 0.83163
-anchor_right = 0.9375
-anchor_bottom = 0.87963
-offset_left = 0.359985
-offset_top = 0.104004
-grow_horizontal = 0
-grow_vertical = 0
-text = "Submit"
-metadata/_edit_use_anchors_ = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.392157)
 
 [connection signal="item_clicked" from="FallacyList" to="." method="_on_fallacy_list_item_clicked"]

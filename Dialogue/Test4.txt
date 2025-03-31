@@ -1,15 +1,15 @@
-Evan
-bedroom.jpg
-complaining : Man, it's good to get away from home for a little bit.
-excited : Did the new game you bought come in yet? I wanna play!
-P : Not yet dude, I just ordered that two days ago.
-serious : Ugh, another notification from grandma.
-P : What? How can you say that about your own grandmother? She seemed like a sweet old lady.
-upset : That's cause the last time you saw her was three years ago.
-upset : She's totally bought into this whole talking cat thing.
-P : You mean she's turning into the crazy cat lady Leah dreams of being?
-happy : Hah, she totally does, doesn't she?
-concerned : But no. The opposite, actually. She talks like the whole world's gonna end. Just look at what she sent me.
+Leah
+smallpark.jpg
+P : Leah?
+distracted : Hmm?
+P : Leah!
+shocked : What?
+P : You've been typing for ages. What's going on?
+complaining : Ugh sorry, Evan won't stop texting me.
+P : Oh?
+concerned : What? No. Not like that. It's about the cat again.
+P : Ohh, right. He's not exactly a fan, is he?
+upset : No, and I just don't get it! What does he have against Bartholo-meow?
+P : Can I see?
 PHONE
-upset : What do I even say to her? She's gone nuts and it's making everyone else stressed too.
-P : Let me take a look...
+upset : How should I respond?

@@ -180,4 +180,6 @@ libraries = {
 "": SubResource("AnimationLibrary_0f5e4")
 }
 
+[node name="Click" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
