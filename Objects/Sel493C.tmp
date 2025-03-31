@@ -241,21 +241,8 @@ icon = ExtResource("8_dahgt")
 icon_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Hints" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.873
-anchor_right = 0.928
-anchor_bottom = 0.071
-offset_left = 0.303955
-offset_right = -0.0560303
-offset_bottom = -0.00800323
-text = "Hints"
-
 [connection signal="button_up" from="Confirm" to="." method="_on_confirm_button_up"]
 [connection signal="button_up" from="Part1/Up" to="." method="_on_up_button_up"]
 [connection signal="button_up" from="Part1/Down" to="." method="_on_down_button_up"]
 [connection signal="item_clicked" from="Part2/FallacyList" to="." method="_on_fallacy_list_item_clicked"]
 [connection signal="button_up" from="ErrorDialogueBox/NextButton" to="." method="_on_dialogue_button_button_up"]
-[connection signal="button_up" from="Hints" to="." method="_on_hints_button_up"]
