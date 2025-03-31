@@ -37,7 +37,6 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="LeahPhone" type="TextureRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0677082
@@ -111,7 +110,6 @@ expand_mode = 5
 stretch_mode = 5
 
 [node name="AdHominem" type="TextureRect" parent="Screen"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -179,6 +177,7 @@ color = Color(0.027451, 0.368627, 0.333333, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="RedHerring" type="TextureRect" parent="Screen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

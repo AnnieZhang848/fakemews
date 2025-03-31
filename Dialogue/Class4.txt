@@ -1,3 +1,11 @@
 Teacher
 classroom.png
-happy : Day 4
+serious : Let's get started, please.
+concerned : Yes, I know you are all tired in the middle of the week! So much debate going on about Bartholo-meow, right? I do sympathize.
+P : [i]Yeah, people are still so divided about the whole thing. Understandable of course, but still.[/i]
+excited : But today we are learning about a new common logical fallacy that may help you check the facts and make your own decisions: [b]APPEAL TO PITY[/b].
+concerned : This happens when someone tries to win an argument not with logic or facts, but by making you feel sorry for someone — even when those emotions aren’t relevant to the actual issue being debated.
+serious : If someone says “You should give me a passing grade on this exam because if I fail, I'll lose my scholarship and disappoint my family” ...
+neutral : ... are they trying to win the grade because of their performance, or because you should pity them? 
+serious : Always think critically about what information is actually relevant!
+happy : Especially when...

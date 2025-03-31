@@ -1,3 +1,12 @@
 Teacher
 classroom.png
-happy : Day 3
+happy : Good morning everyone!
+neutral : I hope our recent lectures have encouraged you to engage in debates and make your own conclusions based on facts! 
+P : [i]I'm surprised, but I'm actually learning quite a bit from this unit.[/i]
+excited : Today we're learning about [b]HASTY GENERALIZATIONS[/b]. 
+neutral : This is when someone makes a broad or sweeping conclusion based on very limited evidence. It usually happens when people are too quick to judge without having enough data.
+serious : For example, imagine you meet one teenager who is rude to you. If you then say, “All teenagers are rude,” that’s a hasty generalization. One bad experience doesn't mean every teenager is like that.
+neutral : It works the other way too. If you meet one very polite teenager and say, “All teenagers are always respectful,” that's still a hasty generalization. One case, whether good or bad, doesn't prove a rule about a whole group.
+excited : The key is one or two examples are never enough. You need a pattern, real evidence, and more information before you make a strong claim.
+serious : So remember — don’t jump to big conclusions too quickly. Take your time, gather more evidence, and then decide.
+neutral : Okay, who can answer the following question...

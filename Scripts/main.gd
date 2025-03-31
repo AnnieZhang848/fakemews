@@ -1,7 +1,7 @@
 extends Control
 
 var numUnlocks = 3
-var unlocks = ["Ad Hominem", "Strawman", "Slippery Slope","Appeal to Authority","Appeal to Pity","Hasty Generalization","Red Herring"]
+var unlocks = ["Ad Hominem", "Strawman", "Slippery Slope","Appeal to Authority","Hasty Generalization","Appeal to Pity","Red Herring"]
 
 @onready var Notes = $Fallacies
 @onready var Dialogue = $Game/Dialogue
@@ -30,51 +30,15 @@ func _on_game_scene_ended(scene_num: int) -> void:
 			Notes.init(unlocks, numUnlocks)
 			OpenNotes.show()
 			Dialogue.load_scene(scene_num+1)
-		1:
+		1,4,7,10,13:
 			SetSelectionScreen()
 			Select.show()
 			Dialogue.hide()
-		2:
+		2,5,8,11:
 			Dialogue.load_scene(scene_num+1)
-		3:
+		3,6,9,12:
 			numUnlocks += 1
 			Notes.incrementUnlocks()
-			Dialogue.load_scene(scene_num+1)
-		4:
-			SetSelectionScreen()
-			Select.show()
-			Dialogue.hide()
-		5:
-			Dialogue.load_scene(scene_num+1)
-		6:
-			numUnlocks += 1
-			Notes.incrementUnlocks()
-			Dialogue.load_scene(scene_num+1)
-		7:
-			SetSelectionScreen()
-			Select.show()
-			Dialogue.hide()
-		8:
-			Dialogue.load_scene(scene_num+1)
-		9:
-			numUnlocks += 1
-			Notes.incrementUnlocks()
-			Dialogue.load_scene(scene_num+1)
-		10:
-			SetSelectionScreen()
-			Select.show()
-			Dialogue.hide()
-		11:
-			Dialogue.load_scene(scene_num+1)
-		12:
-			numUnlocks += 1
-			Notes.incrementUnlocks()
-			Dialogue.load_scene(scene_num+1)
-		13:
-			SetSelectionScreen()
-			Select.show()
-			Dialogue.hide()
-		14:
 			Dialogue.load_scene(scene_num+1)
 
 # Open and close the notes page
@@ -84,6 +48,7 @@ func _on_open_notes_pressed() -> void:
 
 func _on_close_notes_pressed() -> void:
 	Notes.hide()
+	Notes.clear_text()
 	$Game.show()
 
 func _on_selection_correct_answer() -> void:

@@ -7,3 +7,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func set_char(whichChar):
+	if whichChar == "Evan":
+		$EvanPhone.show()
+		$LeahPhone.hide()
+	else:
+		$EvanPhone.hide()
+		$LeahPhone.show()
+
+func set_post():
+	pass

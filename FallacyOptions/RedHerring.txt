@@ -1,0 +1,9 @@
+[center][img=300x300]res://Assets/Posts/Insta1.png[/img][center]
+????
+[center][img=300x300]res://Assets/Posts/Insta2.png[/img][center]
+????
+[center][img=300x300]res://Assets/Posts/Insta3.png[/img][center]
+////
+[center][img=300x300]res://Assets/Posts/Insta2.png[/img][center]
+////
+Hasty Generalization

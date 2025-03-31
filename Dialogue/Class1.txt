@@ -2,18 +2,18 @@ Teacher
 classroom.png
 happy : Good morning class!
 excited : That sure was an exciting weekend, wasn't it? A talking cat! How about that? Pretty crazy, huh?
-P : A talking cat? Yeah... I think I did hear something about that. I wonder what people are saying about it.
+P : [i]A talking cat? Yeah... I think I did hear something about that. I wonder what people are saying about it.[/i]
 serious : Try not to let you distract that from your work though. Today we'll be starting a new topic.
-excited : Logical Fallacies!
-neutral : [SOME EXPLANATION ABOUT WHAT LOGICAL FALLACIES ARE]
+excited : [b]LOGICAL FALLACIES![/b]
+neutral : A logical fallacy is an error in reasoning that makes an argument invalid or deceptive, often used to persuade others despite lacking evidence.
 neutral : We'll start by learning about three common ones, then move onto more complex ones during our next classes.
-concerned : Try keeping an eye out for them in your every day life. It just might surprise you how easily they can be overlooked!
-neutral : The first fallacy we'll talk about is an AD HOMINEM.
+concerned : [b]Try keeping an eye out for them in your every day life. It just might surprise you how easily they can be overlooked![/b]
+neutral : The first fallacy we'll talk about is an [b]AD HOMINEM[/b].
 neutral : An Ad Hominem is when you attack the person making the argument instead of debating the argument itself.
 serious : For instance, saying "You can't trust Bob's opinion on climate change; he looks like he never goes outside!" is not a fair statement to make because there's no correlation between the way someone looks and how informed they might be.
-neutral : Next up is the STRAWMAN FALLACY.
+neutral : Next up is the [b]STRAWMAN FALLACY[/b].
 serious : That's when you misrepresent or oversimplify someone’s argument to make it easier to attack.
 neutral : If I said "We should limit sugar in school lunches to improve health," and you said "So, you think we should ban all sweets and make everyone miserable?" that would be a Strawman.
-neutral : Lastly we have the SLIPPERY SLOPE: Arguing that an action will definitely lead to a chain of negative events without evidence.
+neutral : Lastly we have the [b]SLIPPERY SLOPE[/b]: Arguing that an action will definitely lead to a chain of negative events without evidence.
 neutral : For example, "If we allow students to redo one test, next they'll want to redo every test, and soon no one will ever study!"
 happy : I hope that all makes sense. Let's do a couple worksheets now, and let me know if you have any questions!

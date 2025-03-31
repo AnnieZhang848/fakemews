@@ -78,7 +78,8 @@ offset_bottom = 0.11441
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_q48wf")
-text = "This is where dialogue will go. We can have dialogue text files for each scene and feed them into an array based on paragraph breaks. Then the \"next\" button (and spacebar/enter key?) will just replace the dialogue text with the next paragraph."
+bbcode_enabled = true
+text = "This is where [b]dialogue[/b] will go. We can have dialogue text files for each scene and feed them into an array based on paragraph breaks. Then the \"next\" button [i](and spacebar/enter key?)[/i] will just replace the dialogue text with the next paragraph."
 metadata/_edit_use_anchors_ = true
 
 [node name="Name" type="Label" parent="TextBox"]

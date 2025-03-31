@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxfbrvtt3t64g"]
+
+[ext_resource type="Script" path="res://Scripts/tooltip.gd" id="1_7ouub"]
+[ext_resource type="Texture2D" uid="uid://bstay484wvo8u" path="res://Assets/Tooltip.png" id="2_6bgtq"]
+[ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="3_db8to"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndh84"]
+size = Vector2(278, 206)
+
+[node name="Tooltip" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+script = ExtResource("1_7ouub")
+
+[node name="Image" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37
+anchor_top = 0.345679
+anchor_right = 0.63
+anchor_bottom = 0.719
+offset_left = -0.23999
+offset_right = 0.239929
+offset_bottom = 0.0879822
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6bgtq")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="MainText" type="Label" parent="Image"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0833333
+anchor_top = 0.239669
+anchor_right = 0.923333
+anchor_bottom = 0.714876
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_db8to")
+text = "Hint: Click this box to close it!"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Hint" type="Label" parent="Image"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.623333
+anchor_top = 0.735537
+anchor_right = 0.963333
+anchor_bottom = 0.834711
+offset_top = 1.14441e-05
+offset_bottom = 1.52588e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_db8to")
+theme_override_font_sizes/font_size = 18
+text = "(Click to close)"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(426, 224)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(151, 121)
+shape = SubResource("RectangleShape2D_ndh84")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

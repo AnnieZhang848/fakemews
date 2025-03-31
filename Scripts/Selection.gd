@@ -1,22 +1,28 @@
 extends Control
 
 var FallacySelected
-var TextSelected
 
 signal correct_answer
 
-@onready var FallacyList = $FallacyList
-@onready var TextSelection = $Selection/OptionText
-@onready var DownButton = $Selection/Down
-@onready var UpButton = $Selection/Up
+@onready var FallacyList = $Part2/FallacyList
+@onready var Phone = $Part2/Phone
+@onready var TextSelection = $Part1/OptionText
+@onready var DownButton = $Part1/Down
+@onready var UpButton = $Part1/Up
+@onready var Hint3 = $Part2/Hint3
 
-var FileOptions = ["res://FallacyOptions/Example1.txt"]
+var FileOptions = ["res://FallacyOptions/RedHerring.txt"]
 
 var PossibleText = [""]
 var index = 0
 
 var IdealFallacy = ""
 var IdealText = ""
+
+func _ready() -> void:
+	$Hint1.init("Use the up and down arrows to select the part of the text that contains a LOGICAL FALLACY")
+	$Hint2.init("When you think you have the answer, press this submit button")
+	Hint3.init("Identify which fallacy is present. Then press the submit button again")
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta: float) -> void:
@@ -86,7 +92,11 @@ func _on_down_button_up():
 	SetOptionText()
 
 func _on_confirm_button_up():
-	var a = (PossibleText[index].contains(IdealText)) and (FallacySelected.contains(IdealFallacy))
-	if(a):
-		correct_answer.emit()
+	if PossibleText[index].contains(IdealText):
+		if FallacySelected == null:
+			Phone.hide()
+			Hint3.show()
+		elif FallacySelected.contains(IdealFallacy):
+			index = 0
+			correct_answer.emit()
 	
