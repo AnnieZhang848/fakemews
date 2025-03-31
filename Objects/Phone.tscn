@@ -78,15 +78,14 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AppealToAuthority" type="TextureRect" parent="Screen"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = -23.0
-offset_right = -8.0
-offset_bottom = -25.0
+offset_left = -3.0
+offset_top = -6.99969
+offset_right = 1.00012
+offset_bottom = -9.00021
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_foyun")
@@ -110,6 +109,7 @@ expand_mode = 5
 stretch_mode = 5
 
 [node name="AdHominem" type="TextureRect" parent="Screen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

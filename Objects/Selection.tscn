@@ -77,7 +77,7 @@ metadata/_edit_use_anchors_ = true
 [node name="OptionText" type="RichTextLabel" parent="Part1"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.00828149
+anchor_left = 0.00828162
 anchor_top = 0.465402
 anchor_right = 1.00828
 anchor_bottom = 0.58817

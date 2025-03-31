@@ -2,6 +2,7 @@ extends Control
 
 var numUnlocks = 3
 var unlocks = ["Ad Hominem", "Strawman", "Slippery Slope","Appeal to Authority","Hasty Generalization","Appeal to Pity","Red Herring"]
+var selectionScreen = 0
 
 @onready var Notes = $Fallacies
 @onready var Dialogue = $Game/Dialogue
@@ -13,8 +14,9 @@ func _ready():
 	Select.hide()
 	OpenNotes.hide()
 
-func SetSelectionScreen(index : int = 0):
-	Select.PresentOptions(numUnlocks,unlocks,index)
+func SetSelectionScreen():
+	Select.PresentOptions(numUnlocks,unlocks,selectionScreen)
+	selectionScreen += 1
 
 func incrementUnlocks():
 	Notes.incrementUnlocks()
@@ -30,12 +32,13 @@ func _on_game_scene_ended(scene_num: int) -> void:
 			Notes.init(unlocks, numUnlocks)
 			OpenNotes.show()
 			Dialogue.load_scene(scene_num+1)
-		1,4,7,10,13:
 			SetSelectionScreen()
+		1,4,7,10,13:
 			Select.show()
 			Dialogue.hide()
 		2,5,8,11:
 			Dialogue.load_scene(scene_num+1)
+			SetSelectionScreen()
 		3,6,9,12:
 			numUnlocks += 1
 			Notes.incrementUnlocks()
@@ -55,3 +58,10 @@ func _on_selection_correct_answer() -> void:
 	Dialogue.load_scene()
 	Dialogue.show()
 	Select.hide()
+
+func _on_dialogue_friend_talking(friend: String) -> void:
+	$Game/Dialogue/Phone.set_char(friend)
+	$Game/Selection/Part2/Phone.set_char(friend)
+
+func _on_selection_post_set(post: String) -> void:
+	$Game/Dialogue/Phone.set_post(post)

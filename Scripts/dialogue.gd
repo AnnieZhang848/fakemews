@@ -23,6 +23,7 @@ var textBoxes = {
 
 signal scene_started(bg : String)
 signal scene_ended(scene_num : int)
+signal friend_talking(friend : String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -74,6 +75,9 @@ func set_speaker(n):
 	speaker.show()
 	name_tag.text = n
 	$TextBox.texture = textBoxes[n]
+	
+	if n == "Evan" or n == "Leah":
+		friend_talking.emit(n)
 
 # Update the text/text boxes and update the speaker's expression
 func set_text(s):

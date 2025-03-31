@@ -3,6 +3,7 @@ extends Control
 var FallacySelected
 
 signal correct_answer
+signal post_set(post : String)
 
 @onready var FallacyList = $Part2/FallacyList
 @onready var Phone = $Part2/Phone
@@ -11,7 +12,7 @@ signal correct_answer
 @onready var UpButton = $Part1/Up
 @onready var Hint3 = $Part2/Hint3
 
-var FileOptions = ["res://FallacyOptions/RedHerring.txt"]
+var FileOptions = ["AdHominem", "AppealToAuthority", "SlipperySlope", "HastyGeneralization", "RedHerring"]
 
 var PossibleText = [""]
 var index = 0
@@ -47,9 +48,8 @@ func PresentOptions(numUnlocks : int, unlocks, File : int):
 	SetOptionText()
 	
 	while (opt.size() < 3):
-		var r=  rand.randi_range(0,numUnlocks-1)
+		var r = rand.randi_range(0,numUnlocks-1)
 		if(opt.has(unlocks[r]) == false):
-			
 			opt.append(unlocks[r] as String)
 
 	if(opt.has(IdealFallacy) == false):
@@ -59,7 +59,8 @@ func PresentOptions(numUnlocks : int, unlocks, File : int):
 	for o in opt:
 		FallacyList.add_item(o)
 
-func load_from_file(file : String):
+func load_from_file(fileName : String):
+	var file = "res://FallacyOptions/%s.txt" % fileName
 	if FileAccess.file_exists(file) == false:
 		print("Error loading from index: %s" % index)
 		return
@@ -72,6 +73,9 @@ func clean_text(content : String):
 	
 	IdealFallacy = split[2].strip_edges()
 	IdealText = split[1].strip_edges()
+	
+	$Part2/Phone.set_post(IdealFallacy)
+	post_set.emit(IdealFallacy)
 	
 	PossibleText = []
 	for s in split[0].split("????"):
@@ -93,10 +97,12 @@ func _on_down_button_up():
 
 func _on_confirm_button_up():
 	if PossibleText[index].contains(IdealText):
-		if FallacySelected == null:
+		if FallacySelected == null and Phone.is_visible():
 			Phone.hide()
 			Hint3.show()
 		elif FallacySelected.contains(IdealFallacy):
 			index = 0
+			FallacySelected = ""
+			Phone.show()
 			correct_answer.emit()
 	
