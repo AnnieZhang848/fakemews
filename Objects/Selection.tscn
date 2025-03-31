@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bu4xhnwvh5jpu"]
+[gd_scene load_steps=18 format=3 uid="uid://bu4xhnwvh5jpu"]
 
 [ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="1_b541w"]
 [ext_resource type="Script" path="res://Scripts/selection.gd" id="1_egd2h"]
@@ -10,11 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://bxfbrvtt3t64g" path="res://Objects/Tooltip.tscn" id="6_w4qmr"]
 [ext_resource type="Texture2D" uid="uid://c8vproidyjnie" path="res://Assets/Buttons/up_pressed.png" id="7_h7p00"]
 [ext_resource type="Texture2D" uid="uid://cnkjkcsqbbd7e" path="res://Assets/p_dialogue.png" id="7_q20wm"]
-[ext_resource type="Texture2D" path="res://Assets/NextButton.png" id="8_dahgt"]
+[ext_resource type="Texture2D" uid="uid://kuc2kanhcxno" path="res://Assets/Buttons/right_idle.png" id="8_dahgt"]
 [ext_resource type="Texture2D" uid="uid://cbkbfkit21xjm" path="res://Assets/Buttons/up_hover.png" id="8_uoswg"]
 [ext_resource type="Texture2D" uid="uid://brg1bgjjgs113" path="res://Assets/Buttons/down_idle.png" id="9_33h50"]
 [ext_resource type="Texture2D" uid="uid://ddcakuese12po" path="res://Assets/Buttons/down_pressed.png" id="10_8k30e"]
 [ext_resource type="Texture2D" uid="uid://woi0lx10wx76" path="res://Assets/Buttons/down_hover.png" id="11_2hc18"]
+[ext_resource type="Texture2D" uid="uid://cw7uc6arf3qjh" path="res://Assets/Buttons/right_pressed.png" id="16_7blor"]
+[ext_resource type="Texture2D" uid="uid://b5wi7arrc45p5" path="res://Assets/Buttons/right_hover.png" id="17_f6o46"]
 
 [node name="Selection" type="Control"]
 layout_mode = 3
@@ -218,23 +220,24 @@ bbcode_enabled = true
 text = "Hmmmm..... 	I dont think that is correct. "
 metadata/_edit_use_anchors_ = true
 
-[node name="NextButton" type="Button" parent="ErrorDialogueBox"]
+[node name="NextButton" type="TextureButton" parent="ErrorDialogueBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.931975
-anchor_top = 0.716681
-anchor_right = 0.97805
-anchor_bottom = 0.860333
+anchor_left = 0.926445
+anchor_top = 0.702192
+anchor_right = 0.97252
+anchor_bottom = 0.845844
 offset_left = -0.192383
 offset_top = -0.255493
-offset_right = -0.184448
-offset_bottom = 0.184448
+offset_right = 9.81641
+offset_bottom = 11.1847
 grow_horizontal = 0
 grow_vertical = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_b541w")
-icon = ExtResource("8_dahgt")
-icon_alignment = 1
+texture_normal = ExtResource("8_dahgt")
+texture_pressed = ExtResource("16_7blor")
+texture_hover = ExtResource("17_f6o46")
 metadata/_edit_use_anchors_ = true
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
