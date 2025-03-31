@@ -1,9 +1,9 @@
 Teacher
 classroom.png
-excited : Hello class, happy Friday! 
-neutral : Today we'll be learning about [b]RED HERRINGS[/b].
+happy : Hello class, happy Friday! 
+excited : Today we'll be learning about [b]RED HERRINGS[/b].
 serious : Red herring is the name of a very tasty dish made with dried smoked herring. 
-excited : Haha, just kidding.
+happy : Haha, just kidding.
 P : [i]Aw man, teachers making jokes can be so cringe.[/i]
 neutral : But seriously, the red herring fallacy is when someone mentions misleading or irrelevant information to confuse and distract their audience.
 neutral : In arguments, this is typically done by deflecting, or by handwaving details by making broad statements.

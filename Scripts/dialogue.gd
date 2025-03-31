@@ -85,10 +85,6 @@ func set_text(s):
 		slide_char(false)
 		$Phone.show()
 		next_text()
-	elif s == "NOPHONE":
-		slide_char(true)
-		$Phone.hide()
-		next_text()
 	else:
 		var text = s.split(" : ")
 		if text[0] == "P":
@@ -110,6 +106,8 @@ func next_text():
 	else:
 		cur_text = 0
 		scene_ended.emit(cur_scene)
+		slide_char(true)
+		$Phone.hide()
 		cur_scene += 1
 
 func slide_char(centered):

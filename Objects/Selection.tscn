@@ -150,10 +150,10 @@ mouse_filter = 2
 [node name="Hint3" parent="Part2" instance=ExtResource("6_w4qmr")]
 visible = false
 layout_mode = 1
-offset_left = 520.0
-offset_top = 146.0
-offset_right = 520.0
-offset_bottom = 146.0
+offset_left = 316.0
+offset_top = -1.0
+offset_right = 316.0
+offset_bottom = -1.0
 
 [node name="Hint1" parent="." instance=ExtResource("6_w4qmr")]
 layout_mode = 1
@@ -203,23 +203,6 @@ grow_vertical = 2
 theme = ExtResource("1_b541w")
 bbcode_enabled = true
 text = "Hmmmm..... 	I dont think that is correct. "
-metadata/_edit_use_anchors_ = true
-
-[node name="Name" type="Label" parent="ErrorDialogueBox"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.00707097
-anchor_top = 0.104499
-anchor_right = 0.153895
-anchor_bottom = 0.197101
-offset_left = 0.327999
-offset_top = -0.0520248
-offset_right = 0.0239868
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_b541w")
-horizontal_alignment = 1
-vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="NextButton" type="Button" parent="ErrorDialogueBox"]
