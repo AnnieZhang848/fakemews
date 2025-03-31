@@ -60,6 +60,7 @@ anchor_right = 0.510417
 anchor_bottom = 0.87963
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("1_te8ay")
 allow_search = false
 metadata/_edit_use_anchors_ = true

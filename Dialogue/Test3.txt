@@ -1,3 +1,15 @@
 Leah
-park.jpg
-shocked : Post 3
+smallpark.jpg
+P : Leah?
+distracted : Hmm?
+P : Leah!
+shocked : What?
+P : You've been typing for ages. What's going on?
+complaining : Ugh sorry, Evan won't stop texting me.
+P : Oh?
+concerned : What? No. Not like that. It's about the cat again.
+P : Ohh, right. He's not exactly a fan, is he?
+upset : No, and I just don't get it! What does he have against Bartholo-meow?
+P : Can I see?
+PHONE
+upset : How should I respond?

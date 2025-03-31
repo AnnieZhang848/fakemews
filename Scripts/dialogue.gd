@@ -112,6 +112,6 @@ func next_text():
 
 func slide_char(centered):
 	if centered:
-		$Characters.global_position.x = 0
+		$AnimationPlayer.play("slide_center")
 	else:
-		$Characters.global_position.x = 300
+		$AnimationPlayer.play("slide_right")

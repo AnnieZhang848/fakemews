@@ -1,3 +1,10 @@
 Leah
-park.jpg
-happy : Oh yeah, you're right!
+smallpark.jpg
+P : Like I thought, he's still been slacking off in class, hasn't he?
+shocked : What do you mean?
+P : He's making a hasty generalization. You know, like the fallacy? Just remind him that even if people can be scummy sometimes, that doesn't mean things are definitely going to turn out badly now.
+excited : True!
+neutral : What we're seeing here is something totally new and unexplored. Who knows what will happen?
+P : Right, but you should try not to get carried away either. Just because it won't definitely crash and burn doesn't mean there can't be unforseen consequences.
+sheepish : Yeah, got it. I'll try to curb my enthusiasm a little. This isn't something to mess up our friendship over.
+neutral : I'll also remind him to think things through and not overgeneralize.

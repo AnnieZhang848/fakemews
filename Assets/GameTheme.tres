@@ -1,15 +1,7 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://bgod22o80c88u"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bgod22o80c88u"]
 
 [ext_resource type="Texture2D" uid="uid://77kei7755n40" path="res://Assets/Notes.png" id="1_g6hiu"]
 [ext_resource type="FontFile" uid="uid://do562hpgetnqk" path="res://Assets/Fonts/BubblerOne-Regular.ttf" id="1_v8aw6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ra70"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vftvs"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q8prw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pfasp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_flid0"]
 content_margin_left = 15.0
@@ -61,11 +53,6 @@ content_margin_right = 0.0
 content_margin_bottom = 0.0
 
 [resource]
-Button/constants/icon_max_width = 50
-Button/styles/focus = SubResource("StyleBoxEmpty_4ra70")
-Button/styles/hover = SubResource("StyleBoxEmpty_vftvs")
-Button/styles/normal = SubResource("StyleBoxEmpty_q8prw")
-Button/styles/pressed = SubResource("StyleBoxEmpty_pfasp")
 ItemList/colors/font_color = Color(0, 0, 0, 1)
 ItemList/colors/font_hovered_color = Color(0.443137, 0.443137, 0.443137, 1)
 ItemList/colors/font_selected_color = Color(0.442911, 0.442911, 0.442911, 1)

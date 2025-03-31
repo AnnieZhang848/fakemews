@@ -11,6 +11,8 @@ func _ready() -> void:
 	add_face("upset", 4, 6, 5)
 	add_face("shocked", 5, 7, 1)
 	add_face("complaining", 4, 7, 1)
+	add_face("sheepish", 2, 4, 3)
+	add_face("distracted", 3, 1, 1)
 	
 	add_face("ERROR", 0, 0, 0)
 	

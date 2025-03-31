@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://7gmadh45wgn8"]
+[gd_scene load_steps=16 format=3 uid="uid://7gmadh45wgn8"]
 
 [ext_resource type="Script" path="res://Scripts/dialogue.gd" id="1_4erna"]
 [ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="2_q48wf"]
@@ -8,7 +8,63 @@
 [ext_resource type="Script" path="res://Scripts/Characters/male_1.gd" id="3_teyni"]
 [ext_resource type="Script" path="res://Scripts/Characters/female_2.gd" id="6_7ajmr"]
 [ext_resource type="Texture2D" uid="uid://cnkjkcsqbbd7e" path="res://Assets/p_dialogue.png" id="7_5dkov"]
-[ext_resource type="Texture2D" uid="uid://dmgwh6txasfvc" path="res://Assets/NextButton.png" id="8_hbr2v"]
+[ext_resource type="Texture2D" uid="uid://kuc2kanhcxno" path="res://Assets/Buttons/right_idle.png" id="9_w70oi"]
+[ext_resource type="Texture2D" uid="uid://cw7uc6arf3qjh" path="res://Assets/Buttons/right_pressed.png" id="10_sudyp"]
+[ext_resource type="Texture2D" uid="uid://b5wi7arrc45p5" path="res://Assets/Buttons/right_hover.png" id="11_jqio3"]
+
+[sub_resource type="Animation" id="Animation_gw2j2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iwjvg"]
+resource_name = "slide_right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(300, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b2wtd"]
+resource_name = "slide_center"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(300, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0f5e4"]
+_data = {
+"RESET": SubResource("Animation_gw2j2"),
+"slide_center": SubResource("Animation_b2wtd"),
+"slide_right": SubResource("Animation_iwjvg")
+}
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -100,23 +156,28 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="NextButton" type="Button" parent="."]
+[node name="NextButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.896
 anchor_top = 0.897
-anchor_right = 0.942
+anchor_right = 0.949
 anchor_bottom = 0.992
 offset_left = -0.192383
 offset_top = -0.255493
-offset_right = -0.184448
+offset_right = -0.248413
 offset_bottom = 0.184448
 grow_horizontal = 0
 grow_vertical = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_q48wf")
-icon = ExtResource("8_hbr2v")
-icon_alignment = 1
-metadata/_edit_use_anchors_ = true
+texture_normal = ExtResource("9_w70oi")
+texture_pressed = ExtResource("10_sudyp")
+texture_hover = ExtResource("11_jqio3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0f5e4")
+}
 
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
