@@ -23,18 +23,11 @@ var IdealText = ""
 
 func _ready() -> void:
 	enableHints()
+	
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta: float) -> void:
-	if index == 0:
-		UpButton.hide()
-	else:
-		UpButton.show()
-		
-	if index == PossibleText.size() - 1:
-		DownButton.hide()
-	else:
-		DownButton.show()
+	pass
 
 ##Sets up the Selection Screen. Supply with numUnlocks, array of Unlocks, and filename of the example used
 func PresentOptions(numUnlocks : int, unlocks, File : int):
@@ -43,6 +36,7 @@ func PresentOptions(numUnlocks : int, unlocks, File : int):
 	IdealText = ""
 	index = 0
 	FallacySelected = null
+	SetTextScrollButton(true)
 	
 	var rand = RandomNumberGenerator.new()
 	var opt = []
@@ -91,8 +85,16 @@ func enableHints():
 	$Hint2.visible = true
 	Hint3.init("Identify which fallacy is present. Then press the submit button again")
 
-###BUTTTONS
+func SetTextScrollButton(b:bool):
+	if b:
+		$Part1/Up.hide()
+		$Part1/Down.show()
+	else:
+		$Part1/Up.hide()
+		$Part1/Down.hide()
 
+
+###BUTTTONS
 func _on_fallacy_list_item_clicked(index, at_position, mouse_button_index):
 	FallacySelected = FallacyList.get_item_text(index)
 
@@ -101,14 +103,28 @@ func SetOptionText():
 
 func _on_up_button_up():
 	index -= 1
+	ButtonIndexCheck()
 	SetOptionText()
 
 func _on_down_button_up():
-	index += 1
+	index += 1		
+	ButtonIndexCheck()
 	SetOptionText()
+
+
+func ButtonIndexCheck():
+	if index == 0:
+		UpButton.hide()
+	else:
+		UpButton.show()
+	if index == PossibleText.size() - 1:
+		DownButton.hide()
+	else:
+		DownButton.show()
 
 func _on_confirm_button_up():
 	if PossibleText[index].contains(IdealText):
+		SetTextScrollButton(false)
 		if FallacySelected == null and Phone.is_visible():
 			Phone.hide()
 			if(hints == true):

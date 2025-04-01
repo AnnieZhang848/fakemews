@@ -28,7 +28,7 @@ signal friend_talking(friend : String)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	init()
-	load_scene(cur_scene)
+	#load_scene(cur_scene)
 	
 func init():
 	name_tag = $TextBox/Name

@@ -27,7 +27,8 @@ func init(unlockList, num):
 func incrementUnlocks():
 	numUnlocks += 1
 	List.add_item(unlocks[numUnlocks-1])
-
+		
+		
 func numFallacyUnlocked():
 	return numUnlocks
 

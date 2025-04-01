@@ -27,7 +27,7 @@ func SetSelectionScreen():
 
 func incrementUnlocks():
 	Notes.incrementUnlocks()
-	numUnlocks +=1
+	numUnlocks += 1
 	
 func _set_background(bg: String) -> void:
 	$Background.texture = load("res://Assets/Backgrounds/%s" % bg)
@@ -94,3 +94,18 @@ func switch_music(f):
 func _on_start_menu_game_start() -> void:
 	$AnimationPlayer.play("fade in")
 	switch_music("Teacher")
+	Dialogue.load_scene()
+	
+	
+func _on_scene_select(n1, n2):
+	numUnlocks = 3
+	Notes.init(unlocks, numUnlocks)
+	selectionScreen = n2
+	Dialogue.cur_scene = n1
+	for i in range(n2-1):
+		incrementUnlocks()
+
+
+func _on_selection_button_button_up():
+	$StartMenu/Selection.show()
+	pass # Replace with function body.
