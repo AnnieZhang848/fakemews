@@ -82,7 +82,7 @@ func clean_text(content : String):
 	
 	PossibleText = []
 	for s in split[0].split("????"):
-		PossibleText.append(s.strip_edges())
+		PossibleText.append("[center]%s[/center]" % s.strip_edges())
 
 func enableHints():
 	$Hint1.init("Use the up and down arrows to select the part of the text that contains a LOGICAL FALLACY")
