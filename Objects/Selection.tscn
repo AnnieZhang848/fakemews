@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c6mgf5m0ssspt" path="res://Assets/Buttons/star_idle.png" id="3_ge5ho"]
 [ext_resource type="Texture2D" uid="uid://iapmmr4ht7wh" path="res://Assets/Buttons/star_pressed.png" id="4_syafy"]
 [ext_resource type="Texture2D" uid="uid://bamb0gx1ivgk4" path="res://Assets/Buttons/star_hover.png" id="5_aru5c"]
-[ext_resource type="PackedScene" uid="uid://gs3w0ha63pxi" path="res://Objects/phone.tscn" id="5_omwtx"]
+[ext_resource type="PackedScene" uid="uid://gs3w0ha63pxi" path="res://Objects/Phone.tscn" id="5_omwtx"]
 [ext_resource type="Texture2D" uid="uid://f4xjcy0l3u7f" path="res://Assets/Buttons/up_idle.png" id="6_d1det"]
 [ext_resource type="Texture2D" uid="uid://bxibyj3q5prqy" path="res://Assets/Notes_2.png" id="6_r51tq"]
 [ext_resource type="PackedScene" uid="uid://bxfbrvtt3t64g" path="res://Objects/Tooltip.tscn" id="6_w4qmr"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cw7uc6arf3qjh" path="res://Assets/Buttons/right_pressed.png" id="16_7blor"]
 [ext_resource type="Texture2D" uid="uid://b5wi7arrc45p5" path="res://Assets/Buttons/right_hover.png" id="17_f6o46"]
 
-[node name="Selection" type="Control"]
+[node name="Selection2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

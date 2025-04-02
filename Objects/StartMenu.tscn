@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c51hr7xdgs2y"]
+[gd_scene load_steps=10 format=3 uid="uid://c51hr7xdgs2y"]
 
 [ext_resource type="Script" path="res://Scripts/start_menu.gd" id="1_t7w65"]
 [ext_resource type="Texture2D" uid="uid://hd5nxad4r6e3" path="res://Assets/Buttons/button_red_idle.png" id="1_tha84"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cyeah50b22kwt" path="res://Assets/Buttons/button_purple_pressed.png" id="5_1l5st"]
 [ext_resource type="Texture2D" uid="uid://xjuaao4exegj" path="res://Assets/Buttons/button_purple_hover.png" id="6_q4f6c"]
 [ext_resource type="AudioStream" uid="uid://bh8qlx1243p2s" path="res://Assets/Sounds/Menu.ogg" id="8_df4h6"]
+[ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="9_lumkb"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -73,7 +74,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Level Select" type="TextureButton" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.344917
@@ -107,4 +107,36 @@ vertical_alignment = 1
 stream = ExtResource("8_df4h6")
 autoplay = true
 
+[node name="Selection" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.698039, 0.443137, 1)
+
+[node name="ItemList" type="ItemList" parent="Selection"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 352.0
+offset_top = 60.0
+offset_right = -372.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("9_lumkb")
+item_count = 5
+item_0/text = "Day 1"
+item_1/text = "Day 2"
+item_2/text = "Day 3"
+item_3/text = "Day 4"
+item_4/text = "Day 5"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Level Select" to="." method="_on_level_select_pressed"]
+[connection signal="item_selected" from="Selection/ItemList" to="." method="_on_item_list_item_selected"]

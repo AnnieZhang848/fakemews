@@ -96,16 +96,12 @@ func _on_start_menu_game_start() -> void:
 	switch_music("Teacher")
 	Dialogue.load_scene()
 	
-	
-func _on_scene_select(n1, n2):
+func _on_start_menu_level_select(n1: Variant, n2: Variant) -> void:
 	numUnlocks = 3
 	Notes.init(unlocks, numUnlocks)
+	OpenNotes.show()
 	selectionScreen = n2
 	Dialogue.cur_scene = n1
 	for i in range(n2-1):
 		incrementUnlocks()
-
-
-func _on_selection_button_button_up():
-	$StartMenu/Selection.show()
-	pass # Replace with function body.
+	SetSelectionScreen()

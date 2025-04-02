@@ -1,10 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://1tehy8n4fosh"]
+[gd_scene load_steps=18 format=3 uid="uid://1tehy8n4fosh"]
 
 [ext_resource type="PackedScene" uid="uid://7gmadh45wgn8" path="res://Objects/Dialogue.tscn" id="1_bc467"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_htgat"]
 [ext_resource type="PackedScene" uid="uid://gs3w0ha63pxi" path="res://Objects/Phone.tscn" id="2_1u7g7"]
 [ext_resource type="PackedScene" uid="uid://bu4xhnwvh5jpu" path="res://Objects/Selection.tscn" id="4_milnb"]
-[ext_resource type="PackedScene" uid="uid://dcod07ms58a3w" path="res://Objects/fallacies.tscn" id="4_ngvpg"]
+[ext_resource type="PackedScene" uid="uid://dcod07ms58a3w" path="res://Objects/Fallacies.tscn" id="4_ngvpg"]
 [ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="5_x72ru"]
 [ext_resource type="Texture2D" uid="uid://bq76lyxw2uqq5" path="res://Assets/Buttons/help_idle.png" id="6_y6ap7"]
 [ext_resource type="Texture2D" uid="uid://bqadxy0olxc50" path="res://Assets/Buttons/help_pressed.png" id="7_2dh8f"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://csk1f07ns3nn" path="res://Assets/Buttons/close_pressed.png" id="11_4kh1o"]
 [ext_resource type="Texture2D" uid="uid://mauoe5r3a1xv" path="res://Assets/Buttons/close_hover.png" id="12_bibxj"]
 [ext_resource type="PackedScene" uid="uid://c51hr7xdgs2y" path="res://Objects/StartMenu.tscn" id="13_lp7fe"]
-[ext_resource type="PackedScene" uid="uid://vebouu2vv453" path="res://Objects/SceneSelection.tscn" id="14_tdbld"]
 
 [sub_resource type="Animation" id="Animation_tayqq"]
 length = 0.001
@@ -204,23 +203,6 @@ texture_hover = ExtResource("12_bibxj")
 [node name="StartMenu" parent="." instance=ExtResource("13_lp7fe")]
 layout_mode = 1
 
-[node name="Selection" parent="StartMenu" instance=ExtResource("14_tdbld")]
-visible = false
-layout_mode = 1
-
-[node name="SelectionButton" type="Button" parent="StartMenu"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.004
-anchor_top = 0.924
-anchor_right = 0.15
-anchor_bottom = 0.985
-offset_left = 0.392
-offset_top = 0.247986
-offset_right = 0.199997
-offset_bottom = -0.280029
-text = "Scene Selection"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_sosr6")
@@ -240,4 +222,4 @@ max_polyphony = 2
 [connection signal="pressed" from="Game/OpenNotes" to="." method="_on_open_notes_pressed"]
 [connection signal="pressed" from="Fallacies/CloseNotes" to="." method="_on_close_notes_pressed"]
 [connection signal="game_start" from="StartMenu" to="." method="_on_start_menu_game_start"]
-[connection signal="button_up" from="StartMenu/SelectionButton" to="." method="_on_selection_button_button_up"]
+[connection signal="level_select" from="StartMenu" to="." method="_on_start_menu_level_select"]
