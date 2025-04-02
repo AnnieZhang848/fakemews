@@ -27,10 +27,6 @@ func init(unlockList, num):
 func incrementUnlocks():
 	numUnlocks += 1
 	List.add_item(unlocks[numUnlocks-1])
-		
-		
-func numFallacyUnlocked():
-	return numUnlocks
 
 func _on_fallacy_list_item_clicked(index, at_position, mouse_button_index):
 	selected = index; 

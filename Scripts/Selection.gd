@@ -23,7 +23,6 @@ var IdealText = ""
 
 func _ready() -> void:
 	enableHints()
-	
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta: float) -> void:
@@ -80,10 +79,11 @@ func clean_text(content : String):
 
 func enableHints():
 	$Hint1.init("Use the up and down arrows to select the part of the text that contains a LOGICAL FALLACY")
-	$Hint1.visible = true
+	$Hint1.show()
 	$Hint2.init("When you think you have the answer, press this submit button")
-	$Hint2.visible = true
-	Hint3.init("Identify which fallacy is present. Then press the submit button again")
+	$Hint2.show()
+	Hint3.init("Identify which fallacy is present and click the correct answer")
+	Hint3.hide()
 
 func SetTextScrollButton(b:bool):
 	if b:
@@ -93,10 +93,17 @@ func SetTextScrollButton(b:bool):
 		$Part1/Up.hide()
 		$Part1/Down.hide()
 
-
-###BUTTTONS
+###BUTTONS
 func _on_fallacy_list_item_clicked(index, at_position, mouse_button_index):
 	FallacySelected = FallacyList.get_item_text(index)
+	if FallacySelected.contains(IdealFallacy):
+		index = 0
+		FallacySelected = ""
+		Phone.show()
+		$Confirm.show()
+		correct_answer.emit()
+	else:
+		$ErrorDialogueBox.visible = true
 
 func SetOptionText():
 	TextSelection.text = PossibleText[index]
@@ -111,7 +118,6 @@ func _on_down_button_up():
 	ButtonIndexCheck()
 	SetOptionText()
 
-
 func ButtonIndexCheck():
 	if index == 0:
 		UpButton.hide()
@@ -124,19 +130,12 @@ func ButtonIndexCheck():
 
 func _on_confirm_button_up():
 	if PossibleText[index].contains(IdealText):
+		$Confirm.hide()
 		SetTextScrollButton(false)
-		if FallacySelected == null and Phone.is_visible():
-			Phone.hide()
-			if(hints == true):
-				Hint3.show()
-				hints = false
-		elif FallacySelected.contains(IdealFallacy):
-			index = 0
-			FallacySelected = ""
-			Phone.show()
-			correct_answer.emit()
-		else:
-			$ErrorDialogueBox.visible = true
+		Phone.hide()
+		if(hints == true):
+			Hint3.show()
+			hints = false
 	else:
 		$ErrorDialogueBox.visible = true
 
