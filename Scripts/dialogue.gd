@@ -61,6 +61,8 @@ func load_scene(index : int = cur_scene):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if cur_scene > 14:
+		hide()
 	if Input.is_action_just_released("Next_Text") and get_parent().is_visible() and is_visible():
 		next_text()
 

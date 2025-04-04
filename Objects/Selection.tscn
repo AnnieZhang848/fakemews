@@ -253,8 +253,6 @@ texture_pressed = ExtResource("16_7blor")
 texture_hover = ExtResource("17_f6o46")
 metadata/_edit_use_anchors_ = true
 
-[node name="Click" type="AudioStreamPlayer" parent="."]
-
 [connection signal="button_up" from="Confirm" to="." method="_on_confirm_button_up"]
 [connection signal="button_up" from="Part1/Up" to="." method="_on_up_button_up"]
 [connection signal="button_up" from="Part1/Down" to="." method="_on_down_button_up"]

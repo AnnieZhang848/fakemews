@@ -25,4 +25,3 @@ func _on_item_list_item_selected(index: int) -> void:
 			level_select.emit(12, index)
 	$BackgroundMusic.stop()
 	hide()
-	game_start.emit()

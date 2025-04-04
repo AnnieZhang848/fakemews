@@ -7,6 +7,7 @@ var selectionScreen = 0
 @onready var Notes = $Fallacies
 @onready var Dialogue = $Game/Dialogue
 @onready var Select = $Game/Selection
+@onready var Finale = $Game/Finale
 @onready var OpenNotes = $Game/OpenNotes
 @onready var BGM = $BackgroundMusic
 
@@ -17,7 +18,6 @@ var music = {
 }
 
 func _ready():
-	Dialogue.show()
 	Select.hide()
 	OpenNotes.hide()
 
@@ -58,9 +58,10 @@ func _on_game_scene_ended(scene_num: int) -> void:
 			Dialogue.load_scene(scene_num+1)
 			$AnimationPlayer.play("fade in")
 		14:
-			Notes.show()
-			$Game.hide()
-			$Fallacies/CloseNotes.hide()
+			$AnimationPlayer.play("fade out")
+			switch_music("teacher")
+			Finale.load_scene("finale")
+			$AnimationPlayer.play("fade in - finale")
 
 # Open and close the notes page
 func _on_open_notes_pressed() -> void:
@@ -92,9 +93,9 @@ func switch_music(f):
 		BGM.play()
 
 func _on_start_menu_game_start() -> void:
-	$AnimationPlayer.play("fade in")
-	switch_music("Teacher")
-	Dialogue.load_scene()
+	Dialogue.hide()
+	$Intro.show()
+	$Intro.start_game()
 	
 func _on_start_menu_level_select(n1: Variant, n2: Variant) -> void:
 	numUnlocks = 3
@@ -105,3 +106,19 @@ func _on_start_menu_level_select(n1: Variant, n2: Variant) -> void:
 	for i in range(n2-1):
 		incrementUnlocks()
 	SetSelectionScreen()
+	_on_intro_game_start()
+
+func _on_finale_game_over() -> void:
+	$AnimationPlayer.speed_scale = 0.5
+	$AnimationPlayer.play("fade out")
+	_set_background("endScreen.png")
+	switch_music("Menu")
+	$Game.hide()
+	$Fallacies/CloseNotes.hide()
+	$AnimationPlayer.play("fade in - ending")
+	Notes.show()
+
+func _on_intro_game_start() -> void:
+	$AnimationPlayer.play("fade in")
+	switch_music("Teacher")
+	Dialogue.load_scene()

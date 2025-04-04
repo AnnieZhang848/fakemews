@@ -1,0 +1,14 @@
+Leah : neutral : Say, we've spoken a lot about Bartholo-meow these past few days...
+Leah : neutral : But you've never given your own opinion yet.
+Evan : excited : Yeah, that's true!
+Evan : concerned : You know that I'm not totally stoked about it.
+Evan : complaining : After all, the technology is still very new and we can't be sure of all the effects quite yet.
+Leah : happy : And you know that I totally love Bartholo-meow!
+Leah : neutral : As far as we know, the scientists are taking lots of precautions to keep him safe and happy.
+Leah : excited : So I'm super excited to see what's in store for the future and where this might go.
+Evan : sheepish : I've also learned to be more open to other people's opinions and be cautious but not paranoid.
+Leah : sheepish : And I'm trying to be less hostile towards those who don't share my opinion and to base my decisions more on facts, less on first reactions.
+Evan : neutral : So now that it's been a week...
+Leah : neutral : Where do you stand?
+P : Hmm... What do I think?
+P : Well...

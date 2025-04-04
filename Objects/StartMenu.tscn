@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c51hr7xdgs2y"]
+[gd_scene load_steps=11 format=3 uid="uid://c51hr7xdgs2y"]
 
 [ext_resource type="Script" path="res://Scripts/start_menu.gd" id="1_t7w65"]
 [ext_resource type="Texture2D" uid="uid://hd5nxad4r6e3" path="res://Assets/Buttons/button_red_idle.png" id="1_tha84"]
+[ext_resource type="Texture2D" uid="uid://cqr63cj7xaei1" path="res://Assets/titleScreen.png" id="2_vqpb5"]
 [ext_resource type="Texture2D" uid="uid://cc5w3ornt6q6u" path="res://Assets/Buttons/button_red_pressed.png" id="2_wixp6"]
 [ext_resource type="Texture2D" uid="uid://dyuigbpu3pa53" path="res://Assets/Buttons/button_red_hover.png" id="3_rp53c"]
 [ext_resource type="Texture2D" uid="uid://f1usbqyxqm7u" path="res://Assets/Buttons/button_purple_idle.png" id="4_bekgk"]
@@ -19,42 +20,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t7w65")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0.698039, 0.443137, 1)
-
-[node name="Title" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.226562
-anchor_right = 1.0
-anchor_bottom = 0.438562
-offset_top = 0.187988
-offset_bottom = -0.188019
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 100
-text = "Fake Mews!"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("2_vqpb5")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Start" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.344917
-anchor_top = 0.476852
-anchor_right = 0.655951
-anchor_bottom = 0.615975
+anchor_left = 0.136583
+anchor_top = 0.600309
+anchor_right = 0.447617
+anchor_bottom = 0.739432
 offset_left = -0.344025
 offset_right = 0.343933
 offset_bottom = -11.152
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("1_tha84")
 texture_pressed = ExtResource("2_wixp6")
 texture_hover = ExtResource("3_rp53c")
@@ -76,15 +65,16 @@ vertical_alignment = 1
 [node name="Level Select" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.344917
-anchor_top = 0.643519
-anchor_right = 0.655951
-anchor_bottom = 0.782642
+anchor_left = 0.137451
+anchor_top = 0.757716
+anchor_right = 0.448485
+anchor_bottom = 0.896839
 offset_left = -0.344025
 offset_right = 0.343933
 offset_bottom = -11.152
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_bekgk")
 texture_pressed = ExtResource("5_1l5st")
 texture_hover = ExtResource("6_q4f6c")
@@ -128,6 +118,7 @@ offset_right = -372.0
 offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_default_cursor_shape = 2
 theme = ExtResource("9_lumkb")
 item_count = 5
 item_0/text = "Day 1"

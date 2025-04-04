@@ -1,0 +1,225 @@
+[gd_scene load_steps=17 format=3 uid="uid://b5keu3trt7cfa"]
+
+[ext_resource type="Script" path="res://Scripts/finale.gd" id="1_me7is"]
+[ext_resource type="PackedScene" uid="uid://dppxv3oxyp3ym" path="res://Objects/Characters/male1.tscn" id="2_eiijv"]
+[ext_resource type="Script" path="res://Scripts/Characters/male_1.gd" id="3_r05xk"]
+[ext_resource type="PackedScene" uid="uid://bpsn0kioxu2fh" path="res://Objects/Characters/female2.tscn" id="5_hdymx"]
+[ext_resource type="Script" path="res://Scripts/Characters/female_2.gd" id="6_6a0dj"]
+[ext_resource type="Texture2D" uid="uid://cnkjkcsqbbd7e" path="res://Assets/p_dialogue.png" id="7_g88cr"]
+[ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="8_nptpd"]
+[ext_resource type="Texture2D" uid="uid://kuc2kanhcxno" path="res://Assets/Buttons/right_idle.png" id="9_n3xgc"]
+[ext_resource type="Texture2D" uid="uid://cw7uc6arf3qjh" path="res://Assets/Buttons/right_pressed.png" id="10_f7st6"]
+[ext_resource type="Texture2D" uid="uid://b5wi7arrc45p5" path="res://Assets/Buttons/right_hover.png" id="11_uhfui"]
+[ext_resource type="Texture2D" uid="uid://hd5nxad4r6e3" path="res://Assets/Buttons/button_red_idle.png" id="11_xtmd7"]
+[ext_resource type="Texture2D" uid="uid://cc5w3ornt6q6u" path="res://Assets/Buttons/button_red_pressed.png" id="12_ejb3k"]
+[ext_resource type="Texture2D" uid="uid://dyuigbpu3pa53" path="res://Assets/Buttons/button_red_hover.png" id="13_pv7vn"]
+[ext_resource type="Texture2D" uid="uid://f1usbqyxqm7u" path="res://Assets/Buttons/button_purple_idle.png" id="14_l255j"]
+[ext_resource type="Texture2D" uid="uid://cyeah50b22kwt" path="res://Assets/Buttons/button_purple_pressed.png" id="15_li4jy"]
+[ext_resource type="Texture2D" uid="uid://xjuaao4exegj" path="res://Assets/Buttons/button_purple_hover.png" id="16_reflt"]
+
+[node name="Finale" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_me7is")
+metadata/_edit_use_anchors_ = true
+
+[node name="Characters" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Evan" parent="Characters" instance=ExtResource("2_eiijv")]
+position = Vector2(-57, -9)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("3_r05xk")
+
+[node name="Leah" parent="Characters" instance=ExtResource("5_hdymx")]
+position = Vector2(414, -11)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("6_6a0dj")
+
+[node name="TextBox" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0279653
+anchor_top = 0.554309
+anchor_right = 0.970486
+anchor_bottom = 1.08631
+offset_left = -0.216001
+offset_top = -0.192047
+offset_right = -1.0
+offset_bottom = 0.0719604
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_g88cr")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Dialogue" type="RichTextLabel" parent="TextBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0296109
+anchor_top = 0.313043
+anchor_right = 0.971429
+anchor_bottom = 0.640248
+offset_left = -0.127876
+offset_right = -0.000488281
+offset_bottom = 0.11441
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_nptpd")
+bbcode_enabled = true
+text = "This is where [b]dialogue[/b] will go. We can have dialogue text files for each scene and feed them into an array based on paragraph breaks. Then the \"next\" button [i](and spacebar/enter key?)[/i] will just replace the dialogue text with the next paragraph."
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="TextBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00707097
+anchor_top = 0.104499
+anchor_right = 0.153895
+anchor_bottom = 0.197101
+offset_left = 0.327999
+offset_top = -0.0520248
+offset_right = 0.0239868
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_nptpd")
+text = "Character Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NextButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.896
+anchor_top = 0.897
+anchor_right = 0.949
+anchor_bottom = 0.992
+offset_left = -0.192383
+offset_top = -0.255493
+offset_right = -0.248413
+offset_bottom = 0.184448
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("8_nptpd")
+texture_normal = ExtResource("9_n3xgc")
+texture_pressed = ExtResource("10_f7st6")
+texture_hover = ExtResource("11_uhfui")
+
+[node name="Choice" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 326.0
+offset_top = 74.0
+offset_right = -326.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.784314)
+
+[node name="Label" type="Label" parent="Choice"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 53.0
+offset_right = -13.0
+offset_bottom = -326.0
+grow_horizontal = 2
+theme = ExtResource("8_nptpd")
+theme_override_font_sizes/font_size = 50
+text = "What is your opinion on Bartholo-meow?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="For" type="TextureButton" parent="Choice"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.584688
+anchor_top = 0.556
+anchor_right = 0.927312
+anchor_bottom = 0.744304
+offset_left = -0.344025
+offset_right = 0.343933
+offset_bottom = -11.152
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_xtmd7")
+texture_pressed = ExtResource("12_ejb3k")
+texture_hover = ExtResource("13_pv7vn")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Choice/For"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_nptpd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "I love him!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Against" type="TextureButton" parent="Choice"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.056688
+anchor_top = 0.548
+anchor_right = 0.399312
+anchor_bottom = 0.738304
+offset_left = -0.344025
+offset_right = 0.343933
+offset_bottom = -11.152
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_l255j")
+texture_pressed = ExtResource("15_li4jy")
+texture_hover = ExtResource("16_reflt")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Choice/Against"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_nptpd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "I'm not so sure about him..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Choice/For" to="." method="_on_for_pressed"]
+[connection signal="pressed" from="Choice/Against" to="." method="_on_against_pressed"]
