@@ -57,9 +57,9 @@ func PresentOptions(numUnlocks : int, unlocks, File : int):
 
 func load_from_file(fileName : String):
 	var file = "res://FallacyOptions/%s.txt" % fileName
-	if FileAccess.file_exists(file) == false:
-		print("Error loading from index: %s" % index)
-		return
+	#if FileAccess.file_exists(file) == false:
+		#print("Error loading from index: %s" % index)
+		#return
 	var f = FileAccess.open(file,FileAccess.READ)
 	var content = f.get_as_text()
 	clean_text(content)
