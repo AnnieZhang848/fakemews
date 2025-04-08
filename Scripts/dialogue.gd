@@ -56,6 +56,10 @@ func load_scene(index : int = cur_scene):
 	set_speaker(scene_text.pop_front())
 	scene_started.emit(scene_text.pop_front().rstrip("\n"))
 	
+	var sceneName = scene_list[index]
+	sceneName = sceneName.left(-1) + " " + sceneName.substr(len(sceneName)-1)
+	$History.add_text([sceneName, ""])
+	
 	set_text(scene_text[cur_text])
 	file.close()
 
