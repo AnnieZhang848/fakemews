@@ -71,10 +71,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_released("Next_Text"):
 			next_text()
 		if Input.is_action_just_released("history"):
-			if $History.is_visible():
-				$History.hide()
-			else:
-				$History.show()
+			_on_history_button_pressed()
 
 func _on_next_button_pressed() -> void:
 	next_text()
@@ -129,3 +126,9 @@ func slide_char(centered):
 		$AnimationPlayer.play("slide_center")
 	else:
 		$AnimationPlayer.play("slide_right")
+
+func _on_history_button_pressed() -> void:
+	if $History.is_visible():
+		$History.hide()
+	else:
+		$History.show()
