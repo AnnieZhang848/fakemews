@@ -25,3 +25,8 @@ func _on_item_list_item_selected(index: int) -> void:
 			level_select.emit(12, index)
 	$BackgroundMusic.stop()
 	hide()
+
+
+func _on_back_button_up():
+	$Selection.hide()
+	#pass # Replace with function body.
