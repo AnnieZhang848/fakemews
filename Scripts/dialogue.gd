@@ -63,8 +63,14 @@ func load_scene(index : int = cur_scene):
 func _process(delta: float) -> void:
 	if cur_scene > 14:
 		hide()
-	if Input.is_action_just_released("Next_Text") and get_parent().is_visible() and is_visible():
-		next_text()
+	if get_parent().is_visible() and is_visible():
+		if Input.is_action_just_released("Next_Text"):
+			next_text()
+		if Input.is_action_just_released("history"):
+			if $History.is_visible():
+				$History.hide()
+			else:
+				$History.show()
 
 func _on_next_button_pressed() -> void:
 	next_text()
@@ -93,10 +99,12 @@ func set_text(s):
 			name_tag.hide()
 			speaker.close_mouth()
 			$TextBox.texture = textBoxes["Player"]
+			$History.add_text(["Player", text[1]])
 		else:
 			name_tag.show()
 			speaker.set_face(text[0])
 			$TextBox.texture = textBoxes[characters.find_key(speaker)]
+			$History.add_text([characters.find_key(speaker), text[1]])
 		dialogue.text = text[1]
 
 # Switch the current text

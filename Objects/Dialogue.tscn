@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://7gmadh45wgn8"]
+[gd_scene load_steps=17 format=3 uid="uid://7gmadh45wgn8"]
 
 [ext_resource type="Script" path="res://Scripts/dialogue.gd" id="1_4erna"]
 [ext_resource type="Theme" uid="uid://bgod22o80c88u" path="res://Assets/GameTheme.tres" id="2_q48wf"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://kuc2kanhcxno" path="res://Assets/Buttons/right_idle.png" id="9_w70oi"]
 [ext_resource type="Texture2D" uid="uid://cw7uc6arf3qjh" path="res://Assets/Buttons/right_pressed.png" id="10_sudyp"]
 [ext_resource type="Texture2D" uid="uid://b5wi7arrc45p5" path="res://Assets/Buttons/right_hover.png" id="11_jqio3"]
+[ext_resource type="PackedScene" uid="uid://gwmu7kxc8u1j" path="res://Objects/History.tscn" id="12_6kjp1"]
 
 [sub_resource type="Animation" id="Animation_gw2j2"]
 length = 0.001
@@ -179,5 +180,9 @@ texture_hover = ExtResource("11_jqio3")
 libraries = {
 "": SubResource("AnimationLibrary_0f5e4")
 }
+
+[node name="History" parent="." instance=ExtResource("12_6kjp1")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

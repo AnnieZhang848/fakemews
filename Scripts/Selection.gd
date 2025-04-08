@@ -26,7 +26,11 @@ func _ready() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta: float) -> void:
-	pass
+	if is_visible():
+		if Input.is_action_just_released("choice_up") and UpButton.is_visible():
+			_on_up_button_up()
+		if Input.is_action_just_released("choice_down") and DownButton.is_visible():
+			_on_down_button_up()
 
 ##Sets up the Selection Screen. Supply with numUnlocks, array of Unlocks, and filename of the example used
 func PresentOptions(numUnlocks : int, unlocks, File : int):
